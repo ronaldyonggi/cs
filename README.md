@@ -8,13 +8,13 @@ The table below keeps track of the materials that I have / have not completed.
 The syllabus and lecture videos are based on the Summer 2017 course.
 The assignments are based on Fall 2016 course materials.
 
-:heavy_check_mark: ==> Completed
-:warning: ==> Partly complete, incomplete
+:heavy_check_mark: ==> Completed | 
+:warning: ==> Partly complete, incomplete |
 :pencil2: ==> Currently in progress
 
 
 |  Day  |  Date  | Topic | Reading | Assignment | 
 |  ---  |  ---  | ----- | ---- | ---- | 
-|  Mon  |  06/19  | Introduction | 1.1, 1.2, 1.3 | Lab 01: Expressions :white_check_mark: | 
+|  Mon  |  06/19  | Introduction | 1.1, 1.2, 1.3 | Lab 01: Expressions :heavy_check_mark: | 
 |  Tue  |  06/20  | Cause and Effect | Chapter 2 | Homework 01 | 
-|  Tue  |  06/20  | Expressions | Chapter 3 | Lab 02: Types & Sequences | 
+|  Tue  |  06/20  | Expressions | Chapter 3 | Lab 02: Types & Sequences :heavy_check_mark: | 
