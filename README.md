@@ -1,6 +1,6 @@
-#Data 8 Progress Tracker
+# Data 8 Progress Tracker
 
-This repository contains course materials in UC Berkeley Data 8 Course that I have completed. The syllabus and lecture videos used are based on the Summer 2017 course. The assignments are based on Fall 2016 materials.
+This repository contains course materials in UC Berkeley Data 8 Course that I have completed. This repository will be updated along the progress of the course.
 
 ## Progress Table
 
