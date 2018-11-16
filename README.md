@@ -16,5 +16,6 @@ The assignments are based on Fall 2016 course materials.
 |  Day  |  Date  | Topic | Reading | Assignment | 
 |  ---  |  ---  | ----- | ---- | ---- | 
 |  Mon  |  06/19  | Introduction :heavy_check_mark: | 1.1, 1.2, 1.3 :heavy_check_mark: | Lab 01: Expressions :heavy_check_mark: | 
-|  Tue  |  06/20  | Cause and Effect :heavy_check_mark: | Chapter 2 | Homework 01 | 
-|  Tue  |  06/20  | Expressions | Chapter 3 | Lab 02: Types & Sequences :heavy_check_mark: | 
+|  Tue  |  06/20  | Cause and Effect :heavy_check_mark: | Chapter 2 :heavy_check_mark: | Homework 01 | 
+|  Wed  |  06/21  | Expressions :heavy_check_mark: | Chapter 3 :heavy_check_mark: | Lab 02: Types & Sequences :heavy_check_mark: | 
+|  Thu  |  06/22  | Data Types :heavy_check_mark: | Chapter 4 :heavy_check_mark: | Homework 02 |
