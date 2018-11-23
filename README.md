@@ -17,6 +17,9 @@ The assignments are based on Fall 2016 course materials.
 |  Mon  |  06/19  | Introduction :heavy_check_mark: | 1.1, 1.2, 1.3 :heavy_check_mark: | Lab 01: Expressions :heavy_check_mark: | 
 |  Tue  |  06/20  | Cause and Effect :heavy_check_mark: | Chapter 2 :heavy_check_mark: | Homework 01 :heavy_check_mark: | 
 |  Wed  |  06/21  | Expressions :heavy_check_mark: | Chapter 3 :heavy_check_mark: | Lab 02: Types & Sequences :heavy_check_mark: | 
-|  Thu  |  06/22  | Data Types :heavy_check_mark: | Chapter 4 :heavy_check_mark: | Homework 02 |
+|  Thu  |  06/22  | Data Types :heavy_check_mark: | Chapter 4 :heavy_check_mark: | Homework 02 :heavy_check_mark: |
 |  Fri  |  06/23  | Tables :heavy_check_mark: <br /> Rows :heavy_check_mark: | 5, 5.1, 5.2 :heavy_check_mark: |   |
 |  Mon  |  06/26  | Census :heavy_check_mark: | 5.3, 5.4 :heavy_check_mark: | Lab 03: Arrays & Tables :heavy_check_mark: | 
+|  Tue  |  06/27  | Charts :heavy_check_mark: | 6, 6.1 :heavy_check_mark: | Homework 3 | 
+|  Wed  |  06/28  | Histograms :heavy_check_mark: | 6.2, 6.3 | Lab 04: Functions and Visualizations |
+|  Thu  |  06/29  | Functions | 7, 7.1 | Project 1: World Progress |
