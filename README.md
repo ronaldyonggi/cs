@@ -5,7 +5,7 @@ This repository contains course materials in UC Berkeley Data 8 Course that I ha
 ## Progress Table
 
 The table below keeps track of the materials that I have / have not completed.
-The syllabus and lecture videos are based on the Summer 2017 course.
+The syllabus and lecture videos are based on the [Summer 2017](http://data8.org/su17/) course.
 The assignments are based on Fall 2016 course materials.
 
 :heavy_check_mark: ==> Completed | 
