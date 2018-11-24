@@ -22,4 +22,4 @@ The assignments are based on Fall 2016 course materials.
 |  Mon  |  06/26  | Census :heavy_check_mark: | 5.3, 5.4 :heavy_check_mark: | Lab 03: Arrays & Tables :heavy_check_mark: | 
 |  Tue  |  06/27  | Charts :heavy_check_mark: | 6, 6.1 :heavy_check_mark: | Homework 3 | 
 |  Wed  |  06/28  | Histograms :heavy_check_mark: | 6.2, 6.3 | Lab 04: Functions and Visualizations |
-|  Thu  |  06/29  | Functions | 7, 7.1 | Project 1: World Progress |
+|  Thu  |  06/29  | Functions :heavy_check_mark: | 7, 7.1 :heavy_check_mark: | Project 1: World Progress |
