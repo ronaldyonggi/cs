@@ -24,5 +24,11 @@ The assignments are based on Fall 2016 course materials.
 |  Wed  |  06/28  | Histograms :heavy_check_mark: | 6.2, 6.3 | Lab 04: Functions and Visualizations :heavy_check_mark:|
 |  Thu  |  06/29  | Functions :heavy_check_mark: | 7, 7.1 :heavy_check_mark: | Project 1: World Progress |
 |  Fri  |  06/30  | Groups :heavy_check_mark: <br /> Joins :heavy_check_mark:  | 7.2, 7.3, 7.4, 7.5 :heavy_check_mark: |  |
-|  Mon  |  07/30  | Iteration |8, 8.1, 8.2|  |
-|  Wed  |  07/05  | Chance |8.3, 8.4| Lab 05: Randomization|
+|  Mon  |  07/03  | Iteration :heavy_check_mark:  |8, 8.1, 8.2 :heavy_check_mark: |  |
+|  Tue  |  07/05  | HOLIDAY  |HOLIDAY|HOLIDAY|
+|  Wed  |  07/05  | Chance :heavy_check_mark: |8.3, 8.4 :heavy_check_mark: | Lab 05: Randomization|
+|  Thu  |  07/06  | Sampling :heavy_check_mark: |8.5, 9, 9.1 :heavy_check_mark: | Homework 04: Randomization|
+|  Fri  |  07/07  | Statistics <br/> Simulation|9.2, 9.3, 10, 10.1||
+|  Mon  |  07/10  | Hypothesis Testing | 10.2 | Lab 06: Statistics and Samples |
+|  Tue  |  07/11  | Error Probabilities | 10.3 | Homework 05 |
+|  Wed  |  07/12  | Examples | N/A | Lab: Midterm Reviews |
