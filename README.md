@@ -8,8 +8,7 @@ The table below keeps track of the materials that I have / have not completed.
 The syllabus and lecture videos are based on the [Summer 2017](http://data8.org/su17/) course.
 The assignments are based on Fall 2016 course materials.
 
-:heavy_check_mark: ==> Completed | 
-:warning: ==> Partly complete, incomplete |
+:heavy_check_mark: ==> Completed 
 
 
 |  Day  |  Date  | Topic | Reading | Assignment | 
@@ -29,6 +28,6 @@ The assignments are based on Fall 2016 course materials.
 |  Wed  |  07/05  | Chance :heavy_check_mark: |8.3, 8.4 :heavy_check_mark: | Lab 05: Randomization|
 |  Thu  |  07/06  | Sampling :heavy_check_mark: |8.5, 9, 9.1 :heavy_check_mark: | Homework 04: Randomization|
 |  Fri  |  07/07  | Statistics :heavy_check_mark:<br/> Simulation:heavy_check_mark:|9.2, 9.3, 10, 10.1||
-|  Mon  |  07/10  | Hypothesis Testing | 10.2 | Lab 06: Statistics and Samples |
-|  Tue  |  07/11  | Error Probabilities | 10.3 | Homework 05 |
+|  Mon  |  07/10  | Hypothesis Testing :heavy_check_mark: | 10.2:heavy_check_mark: | Lab 06: Statistics and Samples |
+|  Tue  |  07/11  | Error Probabilities :heavy_check_mark: | 10.3:heavy_check_mark: | Homework 05 |
 |  Wed  |  07/12  | Examples | N/A | Lab: Midterm Reviews |
