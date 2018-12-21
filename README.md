@@ -29,9 +29,9 @@ The projects are based on Fall 2018 course materials.
 |  Fri  |  06/30  | Groups :heavy_check_mark: <br /> Joins :heavy_check_mark:  | 7.2, 7.3, 7.4, 7.5 :heavy_check_mark: |  |
 |  Mon  |  07/03  | Iteration :heavy_check_mark:  |8, 8.1, 8.2 :heavy_check_mark: |  |
 |  Tue  |  07/05  | HOLIDAY  |HOLIDAY|HOLIDAY|
-|  Wed  |  07/05  | Chance :heavy_check_mark: |8.3, 8.4 :heavy_check_mark: | Lab 05: Randomization|
+|  Wed  |  07/05  | Chance :heavy_check_mark: |8.3, 8.4 :heavy_check_mark: | Lab 05: Randomization:pencil2:|
 |  Thu  |  07/06  | Sampling :heavy_check_mark: |8.5, 9, 9.1 :heavy_check_mark: | Homework 04: Randomization|
-|  Fri  |  07/07  | Statistics :heavy_check_mark:<br/> Simulation:heavy_check_mark:|9.2, 9.3, 10, 10.1||
+|  Fri  |  07/07  | Statistics :heavy_check_mark:<br/> Simulation:heavy_check_mark:|9.2, 9.3, 10, 10.1:heavy_check_mark:|   |
 |  Mon  |  07/10  | Hypothesis Testing :heavy_check_mark: | 10.2:heavy_check_mark: | Lab 06: Statistics and Samples |
 |  Tue  |  07/11  | Error Probabilities :heavy_check_mark: | 10.3:heavy_check_mark: | Homework 05 |
 |  Wed  |  07/12  | Examples :heavy_check_mark:| N/A | Lab: Midterm Reviews |
