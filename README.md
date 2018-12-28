@@ -6,8 +6,8 @@ This repository contains the progress of UC Berkeley Data 8 course materials tha
 
 The table below keeps track of the materials that I have / have not completed.
 * The syllabus and lecture videos are based on the [Summer 2017](http://data8.org/su17/) course materials.
-* The assignments (excluding projects, due to the projects utilizing out-of-date libraries) are based on Fall 2016 course materials. 
-* The projects are based on Fall 2018 course materials. 
+* The assignments (excluding projects, due to the projects utilizing out-of-date libraries) are based on [Fall 2016](http://data8.org/fa16/) course materials. 
+* The projects are based on [Fall 2018](http://data8.org/fa18/) course materials. 
 * The readings are based on the online textbook [Computational and Inferential Thinking](https://www.inferentialthinking.com/chapters/intro) by [Ani Adhikari](http://statistics.berkeley.edu/people/ani-adhikari) and [John DeNero](http://denero.org/).
 
 
