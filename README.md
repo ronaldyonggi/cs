@@ -5,15 +5,14 @@ This repository contains the progress of UC Berkeley Data 8 course materials tha
 ## Progress Table
 
 The table below keeps track of the materials that I have / have not completed.
-The syllabus and lecture videos are based on the [Summer 2017](http://data8.org/su17/) course materials.
-The assignments (excluding projects, due to the projects utilizing out-of-date libraries) are based on Fall 2016 course materials. 
-The projects are based on Fall 2018 course materials. 
-The readings are based on the online textbook [Computational and Inferential Thinking](https://www.inferentialthinking.com/chapters/intro) by [Ani Adhikari](http://statistics.berkeley.edu/people/ani-adhikari) and [John DeNero](http://denero.org/).
+* The syllabus and lecture videos are based on the [Summer 2017](http://data8.org/su17/) course materials.
+* The assignments (excluding projects, due to the projects utilizing out-of-date libraries) are based on Fall 2016 course materials. 
+* The projects are based on Fall 2018 course materials. 
+* The readings are based on the online textbook [Computational and Inferential Thinking](https://www.inferentialthinking.com/chapters/intro) by [Ani Adhikari](http://statistics.berkeley.edu/people/ani-adhikari) and [John DeNero](http://denero.org/).
 
-The contents of this repository are licensed for reuse under [Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)](http://creativecommons.org/licenses/by-nc/4.0/).
 
-###Note:
-The table below follows most of the syllabus of [Summer 2017](http://data8.org/su17/) course. However, it does not follow the course's **Reading** section because Summer 2017 course's readings were based on the older version of online textbook. Instead, the table lists the reading sections that are involved in the video lectures.
+### Note:
+The table below follows most of the syllabus of [Summer 2017](http://data8.org/su17/) course. However, it does not follow the course's **Reading** section because Summer 2017 course's readings were based on the older version of online textbook. Instead, the table lists the reading sections that are covered in the video lectures.
 
 | Symbol | Meaning |
 | --- | --- |
@@ -21,7 +20,7 @@ The table below follows most of the syllabus of [Summer 2017](http://data8.org/s
 |:pencil2:| Incomplete |
 
 
-|  Day  |  Date  | Topic | Reading Involved <br> in Video Lecture | Assignment | 
+|  Day  |  Date  | Topic | Readings Covered <br> in Video Lectures | Assignment | 
 |  ---  |  ---  | ----- | ---- | ---- | 
 |  Mon  |  06/19  | Introduction :heavy_check_mark: | 1.1, 1.2, 1.3 :heavy_check_mark: | Lab 01: Expressions :heavy_check_mark: | 
 |  Tue  |  06/20  | Cause and Effect :heavy_check_mark: | 2, 2.1, 2.2, 2.3, 2.5 :heavy_check_mark: | Homework 01 :heavy_check_mark: | 
@@ -45,3 +44,6 @@ The table below follows most of the syllabus of [Summer 2017](http://data8.org/s
 |  Mon  |  07/17  | Permutation Tests :pencil2:| | Project 2 |
 |  Tue  |  07/18  | Percentiles & The Bootstrap:heavy_check_mark: | | |
 |  Wed  |  07/19  | Confidence Intervals | | Lab 07: The Bootstrap |
+
+
+The contents of this repository are licensed for reuse under [Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)](http://creativecommons.org/licenses/by-nc/4.0/).
