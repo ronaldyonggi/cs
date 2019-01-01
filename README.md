@@ -30,12 +30,12 @@ The table below follows most of the syllabus of [Summer 2017](http://data8.org/s
 |  Mon  |  06/26  | Census :heavy_check_mark: | 6.3 | Lab 03: Arrays & Tables :heavy_check_mark: | 
 |  Tue  |  06/27  | Charts :heavy_check_mark: |  | Homework 3 :heavy_check_mark: | 
 |  Wed  |  06/28  | Histograms :heavy_check_mark: | | Lab 04: Functions and Visualizations :heavy_check_mark:|
-|  Thu  |  06/29  | Functions :heavy_check_mark: |  | Project 1 |
+|  Thu  |  06/29  | Functions :heavy_check_mark: |  | Project 1: World Progress :heavy_check_mark: |
 |  Fri  |  06/30  | Groups :heavy_check_mark: <br /> Joins :heavy_check_mark:  | |  |
 |  Mon  |  07/03  | Iteration :heavy_check_mark:  ||  |
 |  Tue  |  07/05  | HOLIDAY  |HOLIDAY|HOLIDAY|
-|  Wed  |  07/05  | Chance :heavy_check_mark: || Lab 05: Randomization:pencil2:|
-|  Thu  |  07/06  | Sampling :heavy_check_mark: || Homework 04: Randomization|
+|  Wed  |  07/05  | Chance :heavy_check_mark: || Lab 05: Randomization :heavy_check_mark:|
+|  Thu  |  07/06  | Sampling :heavy_check_mark: || Homework 04: Randomization :heavy_check_mark:|
 |  Fri  |  07/07  | Statistics :heavy_check_mark:<br/> Simulation:heavy_check_mark:||   |
 |  Mon  |  07/10  | Hypothesis Testing :heavy_check_mark: | | Lab 06: Statistics and Samples |
 |  Tue  |  07/11  | Error Probabilities :pencil2: | | Homework 05 |
