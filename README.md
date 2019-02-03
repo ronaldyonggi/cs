@@ -42,11 +42,11 @@ The table below follows most of the syllabus of [Summer 2017](http://data8.org/s
 |  Wed  |  07/12  | Examples :heavy_check_mark: | N/A | Lab: Midterm Reviews |
 |  Thu  |  07/13  | Midterm Review :heavy_check_mark: | N/A |  |
 |  Fri  |  07/14  | Midterm| N/A | N/A | |
-|  Mon  |  07/17  | Permutation Tests | | Project 2 |
-|  Tue  |  07/18  | Percentiles & The Bootstrap| | |
-|  Wed  |  07/19  | Confidence Intervals | | Lab 07: The Bootstrap |
-|  Thu  |  07/20  | A/B Testing | |  |
-|  Fri  |  07/21  | Center and Spread <br> The Normal Distribution | |  |
+|  Mon  |  07/17  | Permutation Tests :heavy_check_mark: | | Project 2 |
+|  Tue  |  07/18  | Percentiles & The Bootstrap :heavy_check_mark:| | |
+|  Wed  |  07/19  | Confidence Intervals :heavy_check_mark: | | Lab 07: The Bootstrap |
+|  Thu  |  07/20  | A/B Testing :heavy_check_mark: | |  |
+|  Fri  |  07/21  | Center and Spread :heavy_check_mark: <br> The Normal Distribution | |  |
 |  Mon  |  07/24  | Sample Means | | Lab: Hypothesis Testing Concept Check |
 |  Tue  |  07/25  | Designing Experiments | | Homework 06 |
 |  Wed  |  07/26  | Correlation | | Lab 08: Regression |
