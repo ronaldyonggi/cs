@@ -46,13 +46,13 @@ The table below follows most of the syllabus of [Summer 2017](http://data8.org/s
 |  Tue  |  07/18  | Percentiles & The Bootstrap :heavy_check_mark:| | |
 |  Wed  |  07/19  | Confidence Intervals :heavy_check_mark: | | Lab 07: The Bootstrap |
 |  Thu  |  07/20  | A/B Testing :heavy_check_mark: | |  |
-|  Fri  |  07/21  | Center and Spread :heavy_check_mark: <br> The Normal Distribution | |  |
-|  Mon  |  07/24  | Sample Means | | Lab: Hypothesis Testing Concept Check |
-|  Tue  |  07/25  | Designing Experiments | | Homework 06 |
-|  Wed  |  07/26  | Correlation | | Lab 08: Regression |
-|  Thu  |  07/27  | Linear Regression | | Homework 07 |
-|  Fri  |  07/28  | Least Squares <br> Residuals | | |
-|  Mon  |  07/31  | Regression Inference | | Lab 09: Regression Inference |
+|  Fri  |  07/21  | Center and Spread :heavy_check_mark: <br> The Normal Distribution :heavy_check_mark:| |  |
+|  Mon  |  07/24  | Sample Means :heavy_check_mark: | | Lab: Hypothesis Testing Concept Check |
+|  Tue  |  07/25  | Designing Experiments :heavy_check_mark: | | Homework 06 |
+|  Wed  |  07/26  | Correlation :heavy_check_mark: | | Lab 08: Regression |
+|  Thu  |  07/27  | Linear Regression :heavy_check_mark:| | Homework 07 |
+|  Fri  |  07/28  | Least Squares :heavy_check_mark: <br> Residuals :heavy_check_mark: | | |
+|  Mon  |  07/31  | Regression Inference :heavy_check_mark:| | Lab 09: Regression Inference |
 |  Tue  |  08/01  | Classification | | Project 3|
 |  Wed  |  08/02  | Classifiers | | |
 |  Thu  |  08/03  | Classifier Evaluation | | |
