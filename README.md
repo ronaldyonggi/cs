@@ -17,7 +17,6 @@ The table below follows most of the syllabus of [Summer 2017](http://data8.org/s
 | Symbol | Meaning |
 | --- | --- |
 |:heavy_check_mark:| Completed |
-|:pencil2:| Incomplete |
 
 
 |  Day  |  Date  | Video Lecture | Readings Covered <br> in Video Lecture | Assignment | 
@@ -44,7 +43,7 @@ The table below follows most of the syllabus of [Summer 2017](http://data8.org/s
 |  Fri  |  07/14  | Midterm| N/A | N/A | |
 |  Mon  |  07/17  | Permutation Tests :heavy_check_mark: | | Project 2 |
 |  Tue  |  07/18  | Percentiles & The Bootstrap :heavy_check_mark:| | |
-|  Wed  |  07/19  | Confidence Intervals :heavy_check_mark: | | Lab 07: The Bootstrap |
+|  Wed  |  07/19  | Confidence Intervals :heavy_check_mark: | | Lab 07: The Bootstrap :heavy_check_mark: |
 |  Thu  |  07/20  | A/B Testing :heavy_check_mark: | |  |
 |  Fri  |  07/21  | Center and Spread :heavy_check_mark: <br> The Normal Distribution :heavy_check_mark:| |  |
 |  Mon  |  07/24  | Sample Means :heavy_check_mark: | | Lab: Hypothesis Testing Concept Check |
@@ -53,11 +52,11 @@ The table below follows most of the syllabus of [Summer 2017](http://data8.org/s
 |  Thu  |  07/27  | Linear Regression :heavy_check_mark:| | Homework 07 |
 |  Fri  |  07/28  | Least Squares :heavy_check_mark: <br> Residuals :heavy_check_mark: | | |
 |  Mon  |  07/31  | Regression Inference :heavy_check_mark:| | Lab 09: Regression Inference |
-|  Tue  |  08/01  | Classification | | Project 3|
-|  Wed  |  08/02  | Classifiers | | |
-|  Thu  |  08/03  | Classifier Evaluation | | |
-|  Fri  |  08/04  | Decisions and Conclusions | | |
-|  Mon  |  08/07  | Final Review: Functions, Tables, and Histograms | | Lab: Final Review |
+|  Tue  |  08/01  | Classification :heavy_check_mark: | | Project 3|
+|  Wed  |  08/02  | Classifiers :heavy_check_mark: | | |
+|  Thu  |  08/03  | Classifier Evaluation :heavy_check_mark: | | |
+|  Fri  |  08/04  | Decisions and Conclusions :heavy_check_mark: | | |
+|  Mon  |  08/07  | Final Review: Functions, Tables, and Histograms :heavy_check_mark: | | Lab: Final Review |
 |  Tue  |  08/08  | Final Review: Hypothesis Testing and Confidence Interval | | |
 |  Wed  |  08/09  | Final Review: Regression and Classification | | |
 
