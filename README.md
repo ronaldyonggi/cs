@@ -20,7 +20,7 @@ The course progress below does not include the syllabus's **Reading** section be
 
 
 |  Day  |  Date  | Video Lecture |  Assignment | 
-|  ---  |  ---  | ----- | ---- | ---- | 
+|  ---  |  ---  | ----- | ---- | 
 |  Mon  |  06/19  | Introduction :heavy_check_mark: |  Lab 01: Expressions :heavy_check_mark: | 
 |  Tue  |  06/20  | Cause and Effect :heavy_check_mark:| Homework 01 :heavy_check_mark: | 
 |  Wed  |  06/21  | Expressions :heavy_check_mark:| Lab 02: Types & Sequences :heavy_check_mark: | 
