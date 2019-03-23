@@ -40,7 +40,7 @@ The course progress below does not include the syllabus's **Reading** section be
 |  Tue  |  07/11  | Error Probabilities :heavy_check_mark:|  Homework 05 :heavy_check_mark:|
 |  Wed  |  07/12  | Examples :heavy_check_mark: |  Lab: Midterm Reviews |
 |  Thu  |  07/13  | Midterm Review :heavy_check_mark: | |
-|  Fri  |  07/14  | Midterm| N/A | 
+|  Fri  |  07/14  | Midterm :heavy_check_mark: | N/A | 
 |  Mon  |  07/17  | Permutation Tests :heavy_check_mark: |  Project 2 :heavy_check_mark:|
 |  Tue  |  07/18  | Percentiles & The Bootstrap :heavy_check_mark:| |
 |  Wed  |  07/19  | Confidence Intervals :heavy_check_mark: |  Lab 07: The Bootstrap :heavy_check_mark: |
