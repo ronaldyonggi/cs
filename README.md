@@ -25,7 +25,7 @@ The course progress below does not include the syllabus's **Reading** section be
 |  Tue  |  06/20  | Cause and Effect :heavy_check_mark:| Homework 01 :heavy_check_mark: | 
 |  Wed  |  06/21  | Expressions :heavy_check_mark:| Lab 02: Types & Sequences :heavy_check_mark: | 
 |  Thu  |  06/22  | Data Types :heavy_check_mark:| Homework 02 :heavy_check_mark: |
-|  Fri  |  06/23  | Tables :heavy_check_mark: <br> Rows :heavy_check_mark |   |
+|  Fri  |  06/23  | Tables :heavy_check_mark: <br> Rows :heavy_check_mark: |   |
 |  Mon  |  06/26  | Census :heavy_check_mark: |  Lab 03: Arrays & Tables :heavy_check_mark: | 
 |  Tue  |  06/27  | Charts :heavy_check_mark: |  Homework 3 :heavy_check_mark: | 
 |  Wed  |  06/28  | Histograms :heavy_check_mark:|  Lab 04: Functions and Visualizations :heavy_check_mark:|
