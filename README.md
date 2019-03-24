@@ -29,7 +29,7 @@ The course progress below does not include the syllabus's **Reading** section be
 |  Mon  |  06/26  | Census :heavy_check_mark: |  Lab 03: Arrays & Tables :heavy_check_mark: | 
 |  Tue  |  06/27  | Charts :heavy_check_mark: |  Homework 3 :heavy_check_mark: | 
 |  Wed  |  06/28  | Histograms :heavy_check_mark:|  Lab 04: Functions and Visualizations :heavy_check_mark:|
-|  Thu  |  06/29  | Functions :heavy_check_mark: |  Project 1: World Progress :heavy_check_mark: |
+|  Thu  |  06/29  | Functions :heavy_check_mark: |  Project 1: World Progress (Fall 2018) :heavy_check_mark: |
 |  Fri  |  06/30  | Groups :heavy_check_mark: <br> Joins :heavy_check_mark:| |  
 |  Mon  |  07/03  | Iteration :heavy_check_mark: ||  
 |  Tue  |  07/05  | HOLIDAY  |HOLIDAY|HOLIDAY|
@@ -41,7 +41,7 @@ The course progress below does not include the syllabus's **Reading** section be
 |  Wed  |  07/12  | Examples :heavy_check_mark: |  Lab: Midterm Reviews |
 |  Thu  |  07/13  | Midterm Review :heavy_check_mark: | |
 |  Fri  |  07/14  | Midterm :heavy_check_mark: | N/A | 
-|  Mon  |  07/17  | Permutation Tests :heavy_check_mark: |  Project 2 :heavy_check_mark:|
+|  Mon  |  07/17  | Permutation Tests :heavy_check_mark: |  Project 2: Diet and Disease (Fall 2018) :heavy_check_mark:|
 |  Tue  |  07/18  | Percentiles & The Bootstrap :heavy_check_mark:| |
 |  Wed  |  07/19  | Confidence Intervals :heavy_check_mark: |  Lab 07: The Bootstrap :heavy_check_mark: |
 |  Thu  |  07/20  | A/B Testing :heavy_check_mark: |   |
@@ -51,7 +51,7 @@ The course progress below does not include the syllabus's **Reading** section be
 |  Wed  |  07/26  | Correlation :heavy_check_mark: |  Lab 08: Regression :heavy_check_mark: |
 |  Thu  |  07/27  | Linear Regression :heavy_check_mark:|  Homework 07 :heavy_check_mark: |
 |  Fri  |  07/28  | Least Squares :heavy_check_mark: <br> Residuals :heavy_check_mark: |  |
-|  Mon  |  07/31  | Regression Inference :heavy_check_mark:|  Lab 09: Regression Inference |
+|  Mon  |  07/31  | Regression Inference :heavy_check_mark:|  Lab 09: Regression Inference :heavy_check_mark:|
 |  Tue  |  08/01  | Classification :heavy_check_mark:  | Project 3|
 |  Wed  |  08/02  | Classifiers :heavy_check_mark: |  |
 |  Thu  |  08/03  | Classifier Evaluation :heavy_check_mark: |  |
@@ -59,6 +59,18 @@ The course progress below does not include the syllabus's **Reading** section be
 |  Mon  |  08/07  | Final Review: Functions, Tables, and Histograms :heavy_check_mark: | Lab: Final Review |
 |  Tue  |  08/08  | Final Review: Hypothesis Testing and Confidence Interval | |
 |  Wed  |  08/09  | Final Review: Regression and Classification |  |
+
+Fall 2016 coursework includes the following assignments that are not available in Summer 2017 Syllabus:
+| Assignment | Progress |
+| ----- | ----- |
+| Homework 7 | ... |
+| Homework 8 | ... |
+| Homework 9 | ... |
+| Homework 10 | ... |
+| Homework 11 | ... |
+| Homework 12 | ... |
+| Lab 10 | ... |
+| Project 4 | ... |
 
 
 The contents of this repository are licensed for reuse under [Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)](http://creativecommons.org/licenses/by-nc/4.0/).
