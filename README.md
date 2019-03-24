@@ -60,7 +60,7 @@ The course progress below does not include the syllabus's **Reading** section be
 |  Tue  |  08/08  | Final Review: Hypothesis Testing and Confidence Interval | |
 |  Wed  |  08/09  | Final Review: Regression and Classification |  |
 
-Fall 2016 coursework includes the following assignments that are not available in Summer 2017 Syllabus:
+Fall 2016 coursework includes the following additional assignments that are not available in Summer 2017 Syllabus:
 
 | Assignment | Progress |
 | ----- | ----- |
