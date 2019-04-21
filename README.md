@@ -69,7 +69,7 @@ Fall 2016 coursework includes the following additional assignments that are not 
 | Homework 10 | :heavy_check_mark: |
 | Homework 11 | :heavy_check_mark: |
 | Homework 12 | :heavy_check_mark: |
-| Lab 10 | ... |
+| Lab 10 | :heavy_check_mark: |
 | Project 4 | ... |
 
 
