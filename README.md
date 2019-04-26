@@ -8,7 +8,7 @@ The table below keeps track of the materials that I have / have not completed.
 * The syllabus and lecture videos are based on the [Summer 2017](http://data8.org/su17/) course materials.
 * The assignments (excluding projects) are based on [Fall 2016](http://data8.org/fa16/) course materials due to availability of solution manuals. 
 * The projects are based on [Fall 2018](http://data8.org/fa18/) course materials. 
-* An additional Project 4: Independent Exploration tha is based on [Fall 2017](http://data8.org/fa17/)
+* An additional Project 4: Independent Exploration that is based on [Fall 2017](http://data8.org/fa17/)
 * The course reading is based on the online textbook [Computational and Inferential Thinking](https://www.inferentialthinking.com/chapters/intro) by [Ani Adhikari](http://statistics.berkeley.edu/people/ani-adhikari) and [John DeNero](http://denero.org/).
 
 
@@ -78,4 +78,6 @@ Fall 2017 coursework includes the following project that is not available in Sum
 | Assignment | Progress |
 | ----- | ----- |
 | Project 4 | ... |
+
+
 The contents of this repository are licensed for reuse under [Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)](http://creativecommons.org/licenses/by-nc/4.0/).
