@@ -53,7 +53,7 @@ The course progress below does not include the syllabus's **Reading** section be
 |  Thu  |  07/27  | Linear Regression :heavy_check_mark:|  Homework 07 :heavy_check_mark: |
 |  Fri  |  07/28  | Least Squares :heavy_check_mark: <br> Residuals :heavy_check_mark: |  |
 |  Mon  |  07/31  | Regression Inference :heavy_check_mark:|  Lab 09: Regression Inference :heavy_check_mark:|
-|  Tue  |  08/01  | Classification :heavy_check_mark:  | Project 3|
+|  Tue  |  08/01  | Classification :heavy_check_mark:  | Project 3: Classifying Movies |
 |  Wed  |  08/02  | Classifiers :heavy_check_mark: |  |
 |  Thu  |  08/03  | Classifier Evaluation :heavy_check_mark: |  |
 |  Fri  |  08/04  | Decisions and Conclusions :heavy_check_mark: |  |
@@ -77,7 +77,7 @@ Fall 2017 coursework includes the following project that is not available in Sum
 
 | Assignment | Progress |
 | ----- | ----- |
-| Project 4 | ... |
+| Project 4: Independent Exploration | ... |
 
 
 The contents of this repository are licensed for reuse under [Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)](http://creativecommons.org/licenses/by-nc/4.0/).
