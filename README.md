@@ -53,13 +53,14 @@ The course progress below does not include the syllabus's **Reading** section be
 |  Thu  |  07/27  | Linear Regression :heavy_check_mark:|  Homework 07 :heavy_check_mark: |
 |  Fri  |  07/28  | Least Squares :heavy_check_mark: <br> Residuals :heavy_check_mark: |  |
 |  Mon  |  07/31  | Regression Inference :heavy_check_mark:|  Lab 09: Regression Inference :heavy_check_mark:|
-|  Tue  |  08/01  | Classification :heavy_check_mark:  | Project 3: Classifying Movies |
+|  Tue  |  08/01  | Classification :heavy_check_mark:  | Project 3: Classifying Movies (Fall 2018) :heavy_check_mark: |
 |  Wed  |  08/02  | Classifiers :heavy_check_mark: |  |
 |  Thu  |  08/03  | Classifier Evaluation :heavy_check_mark: |  |
 |  Fri  |  08/04  | Decisions and Conclusions :heavy_check_mark: |  |
 |  Mon  |  08/07  | Final Review: Functions, Tables, and Histograms :heavy_check_mark: | Lab: Final Review |
 |  Tue  |  08/08  | Final Review: Hypothesis Testing and Confidence Interval | |
 |  Wed  |  08/09  | Final Review: Regression and Classification |  |
+|  Thu  |  08/10  | Final |  |
 
 Fall 2016 coursework includes the following additional assignments that are not available in Summer 2017 Syllabus:
 
