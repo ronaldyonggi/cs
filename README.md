@@ -41,7 +41,7 @@ The course progress below does not include the syllabus's **Reading** section be
 |  Tue  |  07/11  | Error Probabilities :heavy_check_mark:|  Homework 05 :heavy_check_mark:|
 |  Wed  |  07/12  | Examples :heavy_check_mark: |  Lab: Midterm Reviews |
 |  Thu  |  07/13  | Midterm Review :heavy_check_mark: | |
-|  Fri  |  07/14  | Midterm :heavy_check_mark: | N/A | 
+|  Fri  |  07/14  | Midterm (Spring 2017) :heavy_check_mark: | N/A | 
 |  Mon  |  07/17  | Permutation Tests :heavy_check_mark: |  Project 2: Diet and Disease (Fall 2018) :heavy_check_mark:|
 |  Tue  |  07/18  | Percentiles & The Bootstrap :heavy_check_mark:| |
 |  Wed  |  07/19  | Confidence Intervals :heavy_check_mark: |  Lab 07: The Bootstrap :heavy_check_mark: |
@@ -58,8 +58,8 @@ The course progress below does not include the syllabus's **Reading** section be
 |  Thu  |  08/03  | Classifier Evaluation :heavy_check_mark: |  |
 |  Fri  |  08/04  | Decisions and Conclusions :heavy_check_mark: |  |
 |  Mon  |  08/07  | Final Review: Functions, Tables, and Histograms :heavy_check_mark: | Lab: Final Review |
-|  Tue  |  08/08  | Final Review: Hypothesis Testing and Confidence Interval | |
-|  Wed  |  08/09  | Final Review: Regression and Classification |  |
+|  Tue  |  08/08  | Final Review: Hypothesis Testing and Confidence Interval :heavy_check_mark: | |
+|  Wed  |  08/09  | Final Review: Regression and Classification :heavy_check_mark: |  |
 |  Thu  |  08/10  | Final |  |
 
 Fall 2016 coursework includes the following additional assignments that are not available in Summer 2017 Syllabus:
