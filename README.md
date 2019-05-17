@@ -1,4 +1,4 @@
-# Data 8 Progress Tracker
+# Data 8 Progress Tracker - COMPLETED
 
 This repository contains the progress of UC Berkeley Data 8 course materials that I have completed. All course materials licenses belong to UC Berkeley.
 
@@ -60,7 +60,7 @@ The course progress below does not include the syllabus's **Reading** section be
 |  Mon  |  08/07  | Final Review: Functions, Tables, and Histograms :heavy_check_mark: | Lab: Final Review |
 |  Tue  |  08/08  | Final Review: Hypothesis Testing and Confidence Interval :heavy_check_mark: | |
 |  Wed  |  08/09  | Final Review: Regression and Classification :heavy_check_mark: |  |
-|  Thu  |  08/10  | Final |  |
+|  Thu  |  08/10  | Final (Spring 2017) :heavy_check_mark: |  | 
 
 Fall 2016 coursework includes the following additional assignments that are not available in Summer 2017 Syllabus:
 
