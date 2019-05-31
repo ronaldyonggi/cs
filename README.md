@@ -12,6 +12,8 @@ The table below keeps track of the materials that I have / have not completed.
 * The course reading is based on the online textbook [Computational and Inferential Thinking](https://www.inferentialthinking.com/chapters/intro) by [Ani Adhikari](http://statistics.berkeley.edu/people/ani-adhikari) and [John DeNero](http://denero.org/).
 
 
+Lecture notes are written in .ipynb files, which can be opened with Jupyter Notebook or Jupyter Lab.
+
 ### Note:
 The course progress below does not include the syllabus's **Reading** section because the Summer 2017 course readings were based on the older version of the online textbook. 
 
