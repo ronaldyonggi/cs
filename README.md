@@ -1,21 +1,16 @@
 # Data 8 Progress Tracker - COMPLETED
 
-This repository contains the progress of UC Berkeley Data 8 course materials that I have completed. All course materials licenses belong to UC Berkeley.
+This repository contains my progress with UC Berkeley Data 8 - The Foundations of Data Science. All course material licenses belong to UC Berkeley.
 
-## Progress Table
-
-The table below keeps track of the materials that I have / have not completed.
-* The syllabus and lecture videos are based on the [Summer 2017](http://data8.org/su17/) course materials.
-* The assignments (excluding projects) are based on [Fall 2016](http://data8.org/fa16/) course materials due to availability of solution manuals. 
-* The projects are based on [Fall 2018](http://data8.org/fa18/) course materials. 
-* An additional Project 4: Independent Exploration that is based on [Fall 2017](http://data8.org/fa17/)
-* The course reading is based on the online textbook [Computational and Inferential Thinking](https://www.inferentialthinking.com/chapters/intro) by [Ani Adhikari](http://statistics.berkeley.edu/people/ani-adhikari) and [John DeNero](http://denero.org/).
-
+* Syllabus and lecture videos are based on the [Summer 2017](http://data8.org/su17/) course materials.
+* Assignments (excluding projects) are based on [Fall 2016](http://data8.org/fa16/) course materials.
+* Projects 1-3 are based on [Fall 2018](http://data8.org/fa18/) course materials. 
+* Project 4: Independent Exploration that is based on [Fall 2017](http://data8.org/fa17/)
+* Course reading is based on the online textbook [Computational and Inferential Thinking](https://www.inferentialthinking.com/chapters/intro) by [Ani Adhikari](http://statistics.berkeley.edu/people/ani-adhikari) and [John DeNero](http://denero.org/).
 
 Lecture notes are written in .ipynb files, which can be opened with Jupyter Notebook or Jupyter Lab.
 
-### Note:
-The course progress below does not include the syllabus's **Reading** section because the Summer 2017 course readings were based on the older version of the online textbook. 
+## Progress Table
 
 | Symbol | Meaning |
 | --- | --- |
@@ -74,13 +69,5 @@ Fall 2016 coursework includes the following additional assignments that are not 
 | Homework 11 | :heavy_check_mark: |
 | Homework 12 | :heavy_check_mark: |
 | Lab 10 | :heavy_check_mark: |
-
-Fall 2017 coursework includes the following project that is not available in Summer 2017 Syllabus:
-
-
-| Assignment | Progress |
-| ----- | ----- |
-| Project 4: Independent Exploration | ... |
-
 
 The contents of this repository are licensed for reuse under [Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)](http://creativecommons.org/licenses/by-nc/4.0/).
