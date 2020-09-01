@@ -121,9 +121,9 @@ def main():
     # TODO 0: Computes overall runtime in seconds & prints it in hh:mm:ss format
     tot_time = end_time - start_time
 
-    hr = tot_time // 3600
-    minute = (tot_time % 3600) // 60
-    sec = (tot_time % 3600) % 60
+    hr = tot_time // 3600 # hours representation
+    minute = (tot_time % 3600) // 60 # minutes representation
+    sec = (tot_time % 3600) % 60 # seconds representation
 
     print("\n** Total Elapsed Runtime: {}:{}:{}".format(int(hr), int(minute), round(sec)))
     
