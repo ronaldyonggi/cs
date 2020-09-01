@@ -48,7 +48,7 @@ def get_input_args():
     parser.add_argument('--arch', type = str, default = 'vgg', help='CNN model architecture to use')
 
     # Argument 3 - filename containing the list of valid dog names
-    parser.add_argument('--filename', type = str, default= 'dognames.txt', help='filename containing the list of valid dog names')
+    parser.add_argument('--dogfile', type = str, default= 'dognames.txt', help='filename containing the list of valid dog names')
     # Replace None with parser.parse_args() parsed argument collection that 
     # you created with this function 
     return parser.parse_args()
