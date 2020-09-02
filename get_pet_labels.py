@@ -43,6 +43,11 @@ def get_pet_labels(image_dir):
     # Retrieve all the filenames from the directory pet_images/
     filename_list = listdir("pet_images/")
 
+    # Converts a filename to a label
+    def filename_to_label(filename):
+      filename = filename.replace('_', ' ').strip(' 0123456789.jpg')
+      return filename
+
     # Replace None with the results_dic dictionary that you created with this
     # function
     return None
