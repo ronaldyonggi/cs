@@ -45,7 +45,7 @@ def get_pet_labels(image_dir):
 
     # Converts a filename to a label
     def filename_to_label(filename):
-      filename = filename.replace('_', ' ').strip(' 0123456789.jpg').lower()
+      filename = filename.replace('.jpg', '').replace('_', ' ').strip(' 0123456789').lower()
       return filename
 
     results_dic = dict()
