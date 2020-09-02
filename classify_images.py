@@ -65,4 +65,15 @@ def classify_images(images_dir, results_dic, model):
      Returns:
            None - results_dic is mutable data type so no return needed.         
     """
-    None 
+
+    #Iterate through the filenames in results_dic
+    for key in results_dic:
+      # Retrieve the classifier label from calling classifier function and make sure to strip the leading and trailing whitespace.
+      # Make sure the label is in lowercase as well.
+      classifier_label = classifier(images_dir + key, model).lower().strip()
+      # If the label from results_dic and the label from classifier matches, add a code '1'
+      if results_dic[key][0] in classifier_label:
+        results_dic[key].extend([classifier_label, 1])
+      #Otherwise add a code '0'
+      else:
+        results_dic[key].extend([classifier_label, 0])
