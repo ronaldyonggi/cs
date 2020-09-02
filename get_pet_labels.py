@@ -45,9 +45,18 @@ def get_pet_labels(image_dir):
 
     # Converts a filename to a label
     def filename_to_label(filename):
-      filename = filename.replace('_', ' ').strip(' 0123456789.jpg')
+      filename = filename.replace('_', ' ').strip(' 0123456789.jpg').lower()
       return filename
 
+    results_dic = dict()
+    for filename in filename_list:
+      # Skips file if it starts with '.' because it definitely isn't a pet image file.
+      if filename[0] != ".":
+        if filename not in results_dic:
+          results_dic[filename] = [filename_to_label(filename)]
+        # Otherwise, a duplicate is present
+        else:
+          print("Key= {} already exists in results_dic with value = {}".format(filename, filename_to_label(filename)))
     # Replace None with the results_dic dictionary that you created with this
     # function
-    return None
+    return results_dic
