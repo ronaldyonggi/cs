@@ -77,5 +77,16 @@ def adjust_results4_isadog(results_dic, dogfile):
           print("Duplicate is found for {}!".format(line.rstrip()))
         # Otherwise, add a new key-value pair where the dog name is the key
         else:
-          dognames_dic[line.rstrip] = 1
-    None
+          dognames_dic[line.rstrip()] = 1
+
+    for key in results_dic.keys():
+      # Check whether the pet image label is a dog
+      if results_dic[key][0] in dognames_dic:
+        results_dic[key].append(1)
+      if results_dic[key][0] not in dognames_dic:
+        results_dic[key].append(0)
+      # Check whether the classifier label is a dog
+      if results_dic[key][1] in dognames_dic:
+        results_dic[key].append(1)
+      if results_dic[key][1] not in dognames_dic:
+        results_dic[key].append(0)
