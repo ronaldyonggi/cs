@@ -67,4 +67,15 @@ def adjust_results4_isadog(results_dic, dogfile):
     Returns:
            None - results_dic is mutable data type so no return needed.
     """           
+
+    # Use dictionary to store dog names for speed in looking up names.
+    dognames_dic = {}
+    with open(dogfile, 'r') as f:
+      # For each line in dognames, give a warning message if a duplicate is found.
+      for line in f:
+        if line.rstrip() in dognames_dic:
+          print("Duplicate is found for {}!".format(line.rstrip()))
+        # Otherwise, add a new key-value pair where the dog name is the key
+        else:
+          dognames_dic[line.rstrip] = 1
     None
