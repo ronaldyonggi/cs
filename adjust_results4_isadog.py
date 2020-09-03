@@ -80,12 +80,12 @@ def adjust_results4_isadog(results_dic, dogfile):
           dognames_dic[line.rstrip()] = 1
 
     for key in results_dic.keys():
-      # Check whether the pet image label is a dog
+      # Check whether the pet image label is a dog and append 1 if it is and 0 if it is not.
       if results_dic[key][0] in dognames_dic:
         results_dic[key].append(1)
       if results_dic[key][0] not in dognames_dic:
         results_dic[key].append(0)
-      # Check whether the classifier label is a dog
+      # Check whether the classifier label is a dog and append 1 if it is and 0 if it is not.
       if results_dic[key][1] in dognames_dic:
         results_dic[key].append(1)
       if results_dic[key][1] not in dognames_dic:
