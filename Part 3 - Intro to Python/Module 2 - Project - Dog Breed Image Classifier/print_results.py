@@ -62,5 +62,27 @@ def print_results(results_dic, results_stats_dic, model,
     Returns:
            None - simply printing results.
     """    
-    None
+    # Printing Results
+    print("CNN model architecture used:", model)
+    print("Number of images:",results_stats_dic['n_images'])
+    print("Number of dog images:",results_stats_dic['n_dogs_img'])
+    print("Number of not-a-dog images:",results_stats_dic['n_notdogs_img'])
+    print("Percentage of correctly classified dogs:",results_stats_dic['pct_correct_dogs'])
+    print("Percentage of correctly classified dog breeds:",results_stats_dic['pct_correct_breed'])
+    print("Percentage of correctly classified dog breeds:",results_stats_dic['pct_correct_breed'])
+    print("Percentage of match:", results_stats_dic["pct_match"])
+
+    # Printing Misclassified Dogs
+    is_misclassified = results_stats_dic['n_correct_dogs'] + results_stats_dic['n_correct_notdogs'] != results_stats_dic['n_images']
+    if print_incorrect_dogs and is_misclassified:
+        for value in results_dic.values():
+            if value[3] != value[4]:
+                print("Misclassification found between pet label \'{}\' and classifier label \'{}\'".format(value[0], value[1]))
+
+    # Printing Misclassified Breeds
+    if print_incorrect_breed and results_stats_dic['n_correct_dogs'] != results_stats_dic['n_correct_breed']:
+        for value in results_dic.values():
+            if value[2] == 0 and value[3] + value[4] == 2:
+                print("Misclassified breed found between pet label \'{}\' and classifier label \'{}\'".format(value[0], value[1]))
+
                 
