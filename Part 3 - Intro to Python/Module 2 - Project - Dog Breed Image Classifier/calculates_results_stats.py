@@ -72,54 +72,60 @@ def calculates_results_stats(results_dic):
     results_stats = {}
     # Initiate total number of images
     results_stats['n_images'] = 0
-    # Initiate number of correct dog matches
-    results_stats['n_correct_dog_match'] = 0
+    # Initiate number of correctly classified dog images
+    results_stats['n_correct_dogs'] = 0
     # Initiate number dog images
-    results_stats['n_dog_imgs'] = 0
-    # Initiate number of correct non-dog matches
-    results_stats['n_correct_notdog_match'] = 0
+    results_stats['n_dogs_img'] = 0
+    # Initiate number of correctly classified non-dog images
+    results_stats['n_correct_notdogs'] = 0
     # Initiate number of non-dog images
-    results_stats['n_notdog_img'] = 0
+    results_stats['n_notdogs_img'] = 0
     # Initiate number of correct breed matches
     results_stats['n_correct_breed'] = 0
-    # Initiate number of label matches
-    results_stats['n_label_match'] = 0
+    # Initiate number of matches between pet & classifier label
+    results_stats['n_match'] = 0
+    # Initiate percentage of correct matches
+    results_stats['pct_match'] = float(0)
+    # Initiate percentage of correctly classified dogs
+    results_stats['pct_correct_dogs'] = float(0)
+    # Initiate percentage of correctly classified dog breeds
+    results_stats['pct_correct_breed'] = float(0)
+    # Initiate percentage of correctly classified non-dogs
+    results_stats['pct_correct_notdogs'] = float(0)
 
     for value in results_dic.values():
-		# For every iteration, increment number of images
-		results_stats['n_images'] += 1
-		# If both labels are dogs (both index values are 1), counts as correct dog match
-		if value[4] + value[5] == 2:
-				results_stats['n_correct_dog_match'] += 1
-		# Pet label index is either 0 or 1, simply increment.
-		results_stats['n_dog_imgs'] += value[4]
-		# If both labels are not dogs (both index values are 0), count as correct non-dog matches
-		if not (value[4] + value[5]):
-				results_stats['n_correct_notdog_match'] += 1
-		# If the pet label is a dog and the labels match, count as correct breed match
-		if (value[3] + value[4]) == 2:
-				results_stats['n_correct_breed'] += 1
-		# Label matches is either 0 or 1, simply increment.
-		results_stats['n_label_match'] += value[3]
+        # For every iteration of results_dic, increment number of images
+        results_stats['n_images'] += 1
+        # If both pet label and classifier are dogs (both values 1), increment by 1
+        if value[3] + value[4] == 2:
+            results_stats['n_correct_dogs'] += 1
+        # Pet label index is either 0 or 1, simply increment by the pet label index.
+        results_stats['n_dogs_img'] += value[3]
+        # If both pet label and classifier are non-dog (both values 0), increment by 1
+        if not (value[3] + value[4]):
+            results_stats['n_correct_notdogs'] += 1
+        # If the pet label is a dog and the labels match, count as correct breed match
+        if (value[2] + value[3]) == 2:
+            results_stats['n_correct_breed'] += 1
+        # Label matches is either 0 or 1, simply increment.
+        results_stats['n_match'] += value[2]
 
+    # Count of non-dog image is total number of image subtracted by count of dog images
+    results_stats['n_notdogs_img'] = results_stats['n_images'] - results_stats['n_dogs_img']
 
-    # Count of non-dog image is total number of image subtracted by dog images
-    results_stats['n_notdog_img'] = results_stats['n_img'] - results_stats['n_dog_imgs']
-
-    summary_results = {}
-    # Percentage of correctly classified dog images
-    summary_results['%_correct_classify_dog'] = results_stats['n_correct_dog_match'] / results_stats['n_dog_imgs']
-    # Percentage of correctly classified non-dog images, check beforehand if number of nondog images is > 0
-	# If the count of nondog images is 0, set the percentage to be 0
-    if not results_stats['n_notdog_img']:
-		summary_results['%_correct_classify_nondog'] = 0
+    # Calculates percentage of correctly classified dog images
+    results_stats['pct_correct_dogs'] = (results_stats['n_correct_dogs'] / results_stats['n_dogs_img']) * 100
+    # Calculates percentage of correctly classified non-dog images. 
+    # If the count of nondog images is 0, set the percentage to be 0
+    if not results_stats['n_notdogs_img']:
+        results_stats['pct_correct_notdogs'] = 0
     else:
-        summary_results['%_correct_classify_nondog'] = results_stats['n_correct_notdog_match'] / results_stats['n_notdog_img']
+        results_stats['pct_correct_notdogs'] = (results_stats['n_correct_notdogs'] / results_stats['n_notdogs_img']) * 100
     # Percentage of correctly classified dog breeds
-    summary_results['%_correct_breeds'] = results_stats['n_correct_breed'] / results_stats['n_dog_imgs']
+    results_stats['pct_correct_breed'] = (results_stats['n_correct_breed'] / results_stats['n_dogs_img']) * 100
     # Percentage of label matches
-    summary_results['#_label_match'] = results_stats['n_label_match'] / results_stats['n_images']
+    results_stats['pct_match'] = (results_stats['n_match'] / results_stats['n_images'])*100
 
     # Replace None with the results_stats_dic dictionary that you created with 
     # this function 
-    return summary_results
+    return results_stats
