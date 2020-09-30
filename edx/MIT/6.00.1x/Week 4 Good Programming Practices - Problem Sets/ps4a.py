@@ -73,6 +73,7 @@ def getWordScore(word, n):
     """
     wordScore = sum([SCRABBLE_LETTER_VALUES[letter] for letter in word]) * len(word)
     if len(word) == n:
+        # If the length of the word is equal to n, add 50 to the final score.
         return wordScore + 50
     else:
         return wordScore
