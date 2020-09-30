@@ -184,8 +184,6 @@ def isValidWord(word, hand, wordList):
     # Otherwise, the word is valid.
     return True
 
-
-
 #
 # Problem #4: Playing a hand
 #
@@ -197,7 +195,7 @@ def calculateHandlen(hand):
     hand: dictionary (string-> int)
     returns: integer
     """
-    # TO DO... <-- Remove this comment when you code this function
+    return sum(hand.values())
 
 
 
