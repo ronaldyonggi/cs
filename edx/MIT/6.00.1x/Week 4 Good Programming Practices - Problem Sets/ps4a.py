@@ -144,8 +144,11 @@ def updateHand(hand, word):
     hand: dictionary (string -> int)    
     returns: dictionary (string -> int)
     """
+    # Create a copy of the hand to be modified and returned.
     copy = hand.copy()
     for letter in word:
+        # For each letter in word, decrement the value of that
+        # letter in copy.
         copy[letter] -= 1
     return copy
 
