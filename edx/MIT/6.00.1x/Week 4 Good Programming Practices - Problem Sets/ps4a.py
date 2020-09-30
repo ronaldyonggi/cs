@@ -77,8 +77,6 @@ def getWordScore(word, n):
     else:
         return wordScore
 
-getWordScore('hill', 4)
-
 #
 # Problem #2: Make sure you understand how this function works and what it does!
 #
