@@ -124,9 +124,45 @@ def playGame(wordList):
 
     wordList: list (string)
     """
-    # TO DO... <-- Remove this comment when you code this function
-    print("playGame not yet implemented.") # <-- Remove this when you code this function
+    # Initiate the hand that will be used in replaying last hand
+    lastHand = {}
 
+    # userInteraction is the part that asks whether 'u' (user) or 'c' (computer) gets to play. This function was made
+    # to reduce repetition since the same interaction is executed regardless whether user chooses 'n' (deal new hand)
+    # or 'r' (replay last hand).
+    def userInteraction():
+        while True:
+            player = input('Enter u to have yourself play, c to have the computer play: ')
+            if player == "u":
+                playHand(lastHand, wordList, HAND_SIZE)
+                print("")
+                break
+            elif player == "c":
+                compPlayHand(lastHand, wordList, HAND_SIZE)
+                print("")
+                break
+            # If user input is invalid, simply print warning.
+            else:
+                print('Invalid command.\n')
+
+    while True:
+        userInput = input('Enter n to deal a new hand, r to replay the last hand, or e to end game: ')
+        if userInput == "r":
+            # If the user hasn't played any game, lastHand is still empty. Print a warning.
+            if not lastHand:
+                print('You have not played a hand yet. Please play a new hand first!\n')
+            # Play a game using the lastHand. Once the game is over, print a newline.
+            else:
+                userInteraction()
+        elif userInput == "n":
+            # Update lastHand and play a game using that last hand. Once the game is over, print a newline.
+            lastHand = dealHand(HAND_SIZE)
+            userInteraction()
+        # If user input is "e", exit game.
+        elif userInput == "e":
+            break
+        else:
+            print('Invalid command.\n')
         
 #
 # Build data structures used for entire session and play game
@@ -136,3 +172,5 @@ if __name__ == '__main__':
     playGame(wordList)
 
 
+
+# %%
