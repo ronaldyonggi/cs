@@ -1,3 +1,4 @@
+#%%
 # The 6.00 Word Game
 
 import random
@@ -285,12 +286,28 @@ def playGame(wordList):
  
     2) When done playing the hand, repeat from step 1    
     """
-    # TO DO ... <-- Remove this comment when you code this function
-    print("playGame not yet implemented.") # <-- Remove this line when you code the function
-   
-
-
-
+    # Initiate the hand that will be used in replaying last hand
+    lastHand = {}
+    while True:
+        userInput = input('Enter n to deal a new hand, r to replay the last hand, or e to end game: ')
+        if userInput == "r":
+            # If the user hasn't played any game, lastHand is still empty. Print a warning.
+            if not lastHand:
+                print('You have not played a hand yet. Please play a new hand first!\n')
+            # Play a game using the lastHand. Once the game is over, print a newline.
+            else:
+                playHand(lastHand, wordList, HAND_SIZE)
+                print("")
+        elif userInput == "n":
+            # Update lastHand and play a game using that last hand. Once the game is over, print a newline.
+            lastHand = dealHand(HAND_SIZE)
+            playHand(lastHand, wordList, HAND_SIZE)
+            print("")
+        elif userInput == "e":
+            break
+        else:
+            print('Invalid command.\n')
+        
 #
 # Build data structures used for entire session and play game
 #
