@@ -223,7 +223,7 @@ class CiphertextMessage(Message):
             self.message_text (string, determined by input text)
             self.valid_words (list, determined using helper function load_words)
         '''
-        pass #delete this line and replace with your code here
+        Message.__init__(self, text)
 
     def decrypt_message(self):
         '''
@@ -241,16 +241,34 @@ class CiphertextMessage(Message):
         Returns: a tuple of the best shift value used to decrypt the message
         and the decrypted message text using that shift value
         '''
-        pass #delete this line and replace with your code here
+        # Initiate an empty dictionary where the keys will be the shift numbers
+        # and the values will be the number of valid words corresponding to
+        # that shift.
+        shift_vals = {}
+
+        for i in range(26):
+            # Shift the text 
+            shifted = self.apply_shift(i)
+            # Split the word by excluding whitespace and iterate each word
+            for word in shifted.split(' '):
+                # Count the number of valid words corresponding to that shift
+                if is_word(self.get_valid_words(), word):
+                    shift_vals[i] = shift_vals.get(i, 0) + 1
+
+        # Get the best shift
+        best_shift = max(shift_vals, key = shift_vals.get)
+        # Get the word corresponding to that shift
+        real_word = self.apply_shift(best_shift)
+        return ((best_shift, real_word))
 
 #Example test case (PlaintextMessage)
 plaintext = PlaintextMessage('hello', 2)
 print('Expected Output: jgnnq')
 print('Actual Output:', plaintext.get_message_text_encrypted())
     
-# #Example test case (CiphertextMessage)
-# ciphertext = CiphertextMessage('jgnnq')
-# print('Expected Output:', (24, 'hello'))
-# print('Actual Output:', ciphertext.decrypt_message())
+#Example test case (CiphertextMessage)
+ciphertext = CiphertextMessage('jgnnq')
+print('Expected Output:', (24, 'hello'))
+print('Actual Output:', ciphertext.decrypt_message())
 
 # %%
