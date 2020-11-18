@@ -51,3 +51,22 @@ fun min_max (l: int list) =
 (* Problem 2 tests *)
 val test1P2 = min_max [3,4,5] = (3, 5)
 val test2P2 = min_max [3] = (3, 3)
+
+(* Problem 3: Write a function...
+cumsum: int list -> int list
+... that takes a list of numbers and returns a list of the partial sums
+of those numbers. For example,
+cumsum [1, 4, 20] = [1, 5, 25]. *)
+fun cumsum (l: int list) =
+    let
+        fun helper (l: int list, sumsofar: int) =
+            if null (tl l)
+            then [hd l + sumsofar]
+            else (hd l + sumsofar) :: helper(tl l, hd l + sumsofar)
+    in
+        helper(l, 0)
+    end
+
+(* Problem 3 tests *)
+val test1P3 = cumsum [1, 4, 20] = [1, 5, 25]
+val test2P3 = cumsum[4] = [4]
