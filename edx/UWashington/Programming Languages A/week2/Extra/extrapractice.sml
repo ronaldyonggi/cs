@@ -23,4 +23,31 @@ val test2P1 = alternate[3] = 3
 min_max: int list -> int * int
 ...that takes a non-empty list of numbers, and returns a pair (min, max) of the minimum and maximum of the
 number in the list. *)
+fun min_max (l: int list) =
+    let
+        fun min (l: int list) =
+            if null (tl l)
+            then hd l
+            else let val next = min (tl l)
+                 in
+                     if hd l < next
+                     then hd l
+                     else next
+                 end
 
+        fun max (l: int list) =
+            if null (tl l)
+            then hd l
+            else let val next = max (tl l)
+                 in
+                     if hd l > next
+                     then hd l
+                     else next
+                 end
+    in
+        (min l, max l)
+    end
+
+(* Problem 2 tests *)
+val test1P2 = min_max [3,4,5] = (3, 5)
+val test2P2 = min_max [3] = (3, 3)
