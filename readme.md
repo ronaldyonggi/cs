@@ -25,10 +25,10 @@ Legend:
   
  | Courses      | Status          |
  | ------------------ | -------------------------- |
- |[How to Code - Simple Data](https://www.edx.org/course/how-code-simple-data-ubcx-htc1x)| :heavy_check_mark: |
- |[How to Code - Complex Data](https://www.edx.org/course/how-code-complex-data-ubcx-htc2x) | :pencil2:|
- |[Programming Languages, Part A](https://www.coursera.org/learn/programming-languages)| :pencil2 |
- |[Programming Languages, Part B] (https://www.coursera.org/learn/programming-languages-part-b)||
- |[Programming Languages, Part C](https://www.coursera.org/learn/programming-languages-part-c)| |
+ |[How to Code - Simple Data](https://www.edx.org/course/how-code-simple-data-ubcx-htc1x)| :heavy_check_mark: 
+ |[How to Code - Complex Data](https://www.edx.org/course/how-code-complex-data-ubcx-htc2x) |:pencil2:
+ |[Programming Languages, Part A](https://www.coursera.org/learn/programming-languages)|:pencil2:
+ |[Programming Languages, Part B](https://www.coursera.org/learn/programming-languages-part-b)|
+ |[Programming Languages, Part C](https://www.coursera.org/learn/programming-languages-part-c)| 
 
 </details>
