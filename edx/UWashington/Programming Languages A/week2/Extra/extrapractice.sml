@@ -21,6 +21,9 @@ fun alternate (l: int list) =
 val test1P1 = alternate [1, 2, 3, 4] = ~2
 val test2P1 = alternate[3] = 3
 
+(* ======================================================== *) 
+(* ======================================================== *) 
+
 (* Problem 2: Write a function...
 
 min_max: int list -> int * int
@@ -56,6 +59,9 @@ fun min_max (l: int list) =
 val test1P2 = min_max [3,4,5] = (3, 5)
 val test2P2 = min_max [3] = (3, 3)
 
+(* ======================================================== *) 
+(* ======================================================== *) 
+
 (* Problem 3: Write a function...
 
 cumsum: int list -> int list
@@ -77,6 +83,9 @@ fun cumsum (l: int list) =
 val test1P3 = cumsum [1, 4, 20] = [1, 5, 25]
 val test2P3 = cumsum[4] = [4]
 
+(* ======================================================== *) 
+(* ======================================================== *) 
+
 (* Problem 4: Write a function...
 
 greeting: string option -> string
@@ -97,6 +106,9 @@ fun greeting (s: string option) =
 val test1P4 = greeting (SOME "foo") = "Hello there, foo!"
 val test2P4 = greeting (NONE) = "Hello there, you!"
            
+(* ======================================================== *) 
+(* ======================================================== *) 
+
 (* Problem 5: Write a function...
 
 repeat: int list * int list -> int list
@@ -133,3 +145,117 @@ fun repeat (p: int list * int list) =
 val test1P5 = repeat([1, 2, 3], [4, 0, 3]) = [1, 1, 1, 1, 3, 3, 3]
 val test2P5 = repeat([1], [2]) = [1, 1]
 
+(* ======================================================== *) 
+(* ======================================================== *) 
+
+(* Problem 6: Write a function...
+
+addOpt: int option * int option -> int option
+
+...that given two "optional" integers, adds them if they are both present (returning
+SOME of their sum), or returns NONE if at least one of the two arguments is NONE. *)
+fun addOpt(p: int option* int option) = 
+    if isSome (#1 p) andalso isSome (#2 p)
+    then SOME(valOf (#1 p) + valOf (#2 p))
+    else NONE
+
+(* Problem 6 tests *)
+val test1P6 = addOpt(SOME 3, SOME 4) = SOME 7
+val test2P6 = addOpt(SOME 3, NONE) = NONE
+                                    
+(* ======================================================== *) 
+(* ======================================================== *) 
+
+(* Problem 7: Write a function...
+
+addAllOpt : int option list -> int option
+
+...that given a list of "optional" integers, adds those integers that are
+there (e.g. adds all the SOME i). For example,
+
+addAllOpt ([SOME 1, NONE, SOME 3]) = SOME 4
+
+If the list does not not contain any SOME int it (e.g. all NONE or the list is empty), the function should
+return none. *)
+fun addAllOpt(l: int option list) = 
+    if null l
+    then NONE
+    else let
+        fun helper (l: int option list, sumsofar: int) =
+            if null l
+            then sumsofar
+            else if isSome (hd l)
+            then helper(tl l, sumsofar + valOf (hd l))
+            else helper(tl l, sumsofar)
+    in
+        let val result = helper(l, 0)
+        in
+            if result = 0
+            then NONE
+            else SOME result
+        end
+    end
+
+(* Problem 7 tests *)
+val test1P7 = addAllOpt([SOME 1, NONE, SOME 3]) = SOME 4
+val test2P7 = addAllOpt([NONE, NONE]) = NONE
+
+(* ======================================================== *) 
+(* ======================================================== *) 
+                                            
+(* Problem 8: Write a function...
+any : bool list -> bool
+...that given a list of booleans returns true if there is at least of them that is true,
+otherwise returns false. If the list is empty, return false because there's no true. *)
+fun any (l: bool list) =
+    if null l
+    then false
+    else let
+        fun helper(l: bool list, lastbool: bool) = 
+                  if null l
+                  then lastbool
+                  else helper (tl l, lastbool orelse hd l)
+    in
+        helper(l, false)
+    end
+
+(* Problem 8 tests *)
+val test1P8 = any [false, false, false] = false
+val test2P8 = any [true, false, false] = true
+val test3P8 = any [] = false
+
+(* ======================================================== *) 
+(* ======================================================== *) 
+
+(* Problem 9: Write a function...
+all: bool list -> bool
+...that given a list of booleans returns true if all of them true, otherwise
+returns false. If the list is empty, return true because there is no false. *)
+fun all(l: bool list) = 
+    if null l
+    then true
+    else let
+        fun helper(l: bool list, lastbool: bool) =
+            if null l
+            then lastbool
+            else helper (tl l, lastbool andalso hd l)
+    in
+        helper(l, true)
+    end
+
+(* Problem 9 tests *)
+val test1P9 = all [true, true] = true
+val test2P9 = all [false, false] = false
+val test3P9 = all [true, false] = false
+val test4P9 = all [] = true
+
+(* ======================================================== *) 
+(* ======================================================== *) 
+
+(* Problem 10: Write a function...
+zip: int list * int list -> int * int list
+that given two lists of integers, creates consecutive pairs, and stops when one of the
+lists is empty. For example:
+zip ([1, 2, 3], [4, 6]) = [(1, 4), (2, 6)] *)
+fun zip (l1: int list, l2: int list) = 
+    
