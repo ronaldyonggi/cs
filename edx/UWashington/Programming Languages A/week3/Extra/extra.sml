@@ -1,9 +1,11 @@
 
-(* The following type definitions are used in Problem 1-4 *)
+(* The following type definitions are used in Problem 1-4. Note that
+ the grade might be absent (presumably the student unregistered from the course)*)
 type student_id = int;
 type grade = int (* must be in 0 to 100 range *) ;
 type final_grade = { id : student_id, grade : grade option } ;
 datatype pass_fail = pass | fail ;
+
 
 
 (* Problem 1: Write a function pass_or_fail of type
@@ -120,3 +122,50 @@ fun nat_to_int x =
     case x of
         ZERO => 0
       | SUCC i => 1 + nat_to_int i;
+
+(* Problem 12: Write int_to_nat: int -> nat which given an integer returns
+a "natural number" representation for it. Throw a Negative exception if the integer
+was negative. *)
+fun int_to_nat x =
+    if x < 0
+    then raise Negative
+    else case x of
+             0 => ZERO 
+           | _ => SUCC (int_to_nat (x - 1)) ;
+
+(* Problem 13: Write add: nat * nat -> nat to perform addition. *)
+fun add (x, y) =
+    case (x, y) of
+        (ZERO, _) => y 
+      | (SUCC a, b) => add (a, SUCC y);
+        
+(* Problem 14: Write sub: nat * nat -> nat to perfurm subtraction.
+ (Hint: Use pred) *)
+fun sub (x, y) =
+    case (x, y) of
+        (_, ZERO) => x 
+      | _ => sub (pred x, pred y);
+
+(* Problem 15: Write mult: nat * nat -> nat to perform multiplication
+(Hint: Use add)  *)
+fun mult (x, y) =
+    case (x, y) of
+        (_, ZERO) => ZERO 
+      | (ZERO, _) => ZERO 
+      | (_, SUCC ZERO)  => x
+      | _ => mult (add (x, x), pred y) ;
+
+(* Problem 16: Write less_than: nat * nat -> bool to return true when
+the first argument is less than the second. *)
+fun less_than (x, y) =
+    case (x, y) of
+        (_, ZERO) => false 
+     | (ZERO, _) => true
+     | _ => less_than (pred x, pred y);
+
+(* The remaining problems use this datatype, which represents sets of integers. *)
+datatype intSet = 
+         Elems of int list (*list of integers, possibly with duplicates to be ignored*)
+         | Range of { from : int, to : int }  (* integers from one number to another *)
+         | Union of intSet * intSet (* union of the two sets *)
+         | Intersection of intSet * intSet (* intersection of the two sets *)
