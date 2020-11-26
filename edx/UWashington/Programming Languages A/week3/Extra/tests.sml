@@ -48,3 +48,24 @@ val p10t1 = pred (SUCC (SUCC ZERO)) = SUCC ZERO;
 val p11t1 = nat_to_int (SUCC (SUCC ZERO)) = 2;
 val P11t2 = nat_to_int ZERO = 0;
 val p11t3 = nat_to_int (SUCC (SUCC (SUCC ZERO))) = 3;
+
+(* Tests for Problem 12 *)
+val p12t1 = int_to_nat 2 = SUCC (SUCC ZERO) ;
+val p12t2 = int_to_nat 0 = ZERO;
+
+(* Tests for Problem 13 *)
+val p13t1 = add (SUCC ZERO, ZERO) = SUCC ZERO;
+val p13t2 = add (SUCC (SUCC ZERO), SUCC (SUCC ZERO)) = SUCC (SUCC (SUCC (SUCC ZERO))) ;
+
+(* Tests for Problem 14 *)
+val p14t1 =  sub (SUCC ZERO, ZERO) = SUCC ZERO;
+val p14t2 =  sub (SUCC (SUCC ZERO), SUCC ZERO) = SUCC ZERO;
+
+(* Tests for Problem 15 *)
+val p15t1 = mult (ZERO, SUCC (SUCC ZERO)) = ZERO;
+val p15t2 = mult (SUCC (SUCC ZERO), SUCC (SUCC ZERO)) = SUCC(SUCC(SUCC(SUCC ZERO)));
+
+(* Tests for Problem 16 *)
+val p16t1 = less_than (ZERO, ZERO) = false;
+val p16t2 = less_than (SUCC ZERO, SUCC (SUCC ZERO)) = true;
+val p16t3 = less_than (SUCC (SUCC ZERO), SUCC ZERO) = false;
