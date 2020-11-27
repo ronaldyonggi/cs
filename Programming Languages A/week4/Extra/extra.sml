@@ -3,11 +3,7 @@ compose_opt : ('b -> 'c option) -> ('a -> 'b option) -> 'a -> 'c option
 that composes two functions with "optional" values. If either function returns
 NONE then the result is NONE. *)
 
-(* fun compose_opt f g x =
-    if (g x) = NONE
-    then NONE
-    else if f (g x) = NONE
-    then NONE *)
+
 
 (* Problem 2: Write a function do_until:
 ('a -> 'a) -> ('a -> bool) -> 'a -> 'a
@@ -36,7 +32,7 @@ fun factorial x =
 that given a function f and an initial value x applies f to x until f x = x
 (Notice the use of '' to indicate equality types) *)
 
-fun fixed_point (f, x) =
+fun fixed_point f x =
     do_until f (fn i => (f i) <> i) x; 
 
 (* Problem 5: Write a function map2:
@@ -44,7 +40,7 @@ fun fixed_point (f, x) =
 that given a function that takes 'a values to 'b values and a pair of 'a values returns
 the corresponding pair of 'b values *)
 
-fun map2 (f, pr: 'a * 'a) = 
+fun map2 f (pr: 'a * 'a) = 
     (f (#1 pr), f (#2 pr)) ;
 
 (* Problem 6 : Write a function app_all:
@@ -58,23 +54,23 @@ app_all f f 1 = [1, 2, 3, 2, 4, 6, 3, 6, 9] *)
 
 fun app_all f g x =
     let
-        fun helper (flist, x)=
-            case flist of
-                [] => [] 
-              | f :: rest => (f x) :: helper (rest, x);
-
         fun append (l1, l2) =
             case l1 of
                 [] => l2 
-                   | x::rest => x :: append (rest, l2)
+              | x :: rest =>  x :: append (rest, l2) ;
 
-        fun helperlist (flist, xlist) =
-            case xlist of
+        fun helper (f,list) =
+            case list of
                 [] => [] 
-              | x::rest => append (helper(flist, x), helperlist (flist, rest))
+             | x :: rest => append ((f x), helper (f, rest))
     in
-        helperlist (f, helper (g, x))
-    end
-        
+        helper (f,(g x))
+    end ;
+
+(* Problem 7: Implement List.foldr *)
+fun foldr f init list =
+    case list of
+        [] => init 
+     | x :: rest => f x (foldr f init rest)
 
 
