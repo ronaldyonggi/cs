@@ -211,15 +211,21 @@ fun zipOpt (l1: int list, l2: int list) =
     let
         fun helper (l1: int list, l2: int list) =
             if (null l1) orelse (null l2)
-            then if not ((null l1) andalso (null l2))
-                 then NONE
-                 else []
+            then []
             else (hd l1, hd l2) :: helper (tl l1, tl l2) ;
 
-        val result = helper (l1, l2)
+        fun length (l: 'a list) =
+            if null l
+            then 0
+            else 1 + length (tl l)
+
+
+        val result = helper (l1, l2) ;
+        val lengthResult = length result
+        val longerListLength = Int.max(length l1, length l2)
     in
-        if not (isSome result)
-        then result
+        if not (lengthResult = longerListLength)
+        then NONE
         else SOME result
     end
 
