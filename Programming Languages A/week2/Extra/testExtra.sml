@@ -45,6 +45,10 @@ val p10t1 = zip ([1, 2, 3], [4, 6]) = [(1, 4), (2, 6)] ;
 val p10t2 = zip ([1, 2], [4, 5, 6]) = [(1, 4), (2, 5)] ;
 val p10t3 = zip ([1, 2, 3], [4, 5, 6]) = [(1,4), (2, 5), (3, 6)] ;
 
+(* Problem 12 tests *)
+val p12t1 = zipOpt ([1, 2, 3], [4, 6]) = NONE;
+val p12t2 = zipOpt ([1, 2, 3], [4, 5, 6]) =SOME [(1,4), (2, 5), (3, 6)] ;
+
 (* Problem 13 tests *)
 val p13lp = [("lol", 42), ("huh", 7), ("hi", 4)];
 val p13t1 = lookup (p13lp, "huh") = SOME 7;
