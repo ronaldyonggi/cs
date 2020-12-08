@@ -34,3 +34,5 @@ TAGS
 *.swo
 *.swp
 .gdb_history
+*.dep
+*.zo
