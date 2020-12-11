@@ -131,7 +131,7 @@ fun all_answers f l =
 				 (* if applying f to x results NONE, then return NONE. 
 				   otherwise append i to the accumulated list so far. *)
 				 NONE => NONE 
-			      | SOME i  => helper (rest, sofar @ [i])
+			      | SOME i  => helper (rest, sofar @ i)
     in
 	helper (l, [])
     end;
@@ -185,7 +185,7 @@ val check_pat =
 (* Problem 11 *)
 (* This is basically a code implementation of the rules of matching 
 in problem pdf. *)
-(*
+
 fun match (v, p) =
     case (v, p) of
 	(_, Wildcard) => SOME []
@@ -198,27 +198,9 @@ fun match (v, p) =
      | (Constructor (s2, v_), ConstructorP (s1, p_)) => if s1 = s2 then match(v_,p_) else NONE 
      | _ => NONE;
 
-*)
+
 (* Problem 12 *)
-(*
 fun first_match v pl =
     SOME (first_answer (fn p => match (v, p)) pl)
     handle NoAnswer => NONE;
-*)
 	
-fun match (v : valu, p : pattern) : (string * valu) list option = 
-	(* all_answers : (’a -> ’b list option) -> ’a list -> ’b list *)
-	(* ListPair.zip *)
-  case (p, v) of 
-			(Wildcard, _) 				=>	SOME []
-		| (Variable s, v) 			=>	SOME [(s, v)]
-		| (UnitP, Unit) 				=>	SOME []
-		| (ConstP i, Const j)		=>  if i = j then SOME [] else NONE 
-		| (TupleP ps, Tuple vs)	=>	
-				let 
-					val zipped = ListPair.zip (vs, ps)
-				in all_answers match zipped
-				end 
-		| (ConstructorP(s1, p_), Constructor(s2, v_))
-														=> if s1 = s2 then match (v_, p_) else NONE 
-		| _ 										=> NONE 
