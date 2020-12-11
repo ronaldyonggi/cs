@@ -15,8 +15,8 @@
 
 ; Problem 3
 (define (list-nth-mod xs n)
-  (cond [(< n 0) error "list-nth-mod: negative number"]
-        [(null? xs) error "list-nth-mod: empty list"]
+  (cond [(null? xs) (error "list-nth-mod: empty list")]
+        [(< n 0) (error "list-nth-mod: negative number")]
         [#t (car (list-tail xs (remainder n (length xs))))]))
 
 ; Problem 4
@@ -33,10 +33,11 @@
 
 ; Problem 6
 (define dan-then-dog
-  (letrec ([f (lambda (x)
-                (cons x (lambda ()
-                          (if (eq? "dan.jpg" x) "dog.jpg" "dan.jpg"))))])
-    (lambda () (f "dan.jpg"))))
+  (letrec ([f (lambda (bool)
+                (if bool
+                    (cons "dan.jpg" (lambda () (f (not bool))))
+                    (cons "dog.jpg" (lambda () (f (not bool))))))])
+    (lambda () (f #t))))
 
 ; Problem 7
 (define (stream-add-zero s)
@@ -58,8 +59,8 @@
 ; Problem 9
 (define (vector-assoc v vec)
   (letrec ([ f (lambda (n)
-                 (if (> n (vector-length vec)) #f
-                     ; let current is the currently selected nth element in the vector
+                 (if (>= n (vector-length vec)) #f
+                     ; current = the currently selected nth element in the vector
                      (let ([current (vector-ref vec n)])
                        (if (and (pair? current)
                                 (equal? v (car current)))
@@ -69,6 +70,20 @@
 
 ; Problem 10
 (define (cached-assoc xs n)
-  (letrec ([cache null]
-           
-  
+  (letrec ([cache (make-vector n #f)]
+           [index 0]
+           [f (lambda (v)
+                ; Use the vector-assoc defined in the previous
+                ; problem to find if v is already within cache
+                (let ([ans (vector-assoc v cache)])
+                  (if ans ans
+                      (let ([found (assoc v xs)])
+                        (if found
+                            (begin
+                              ; update the element in vector
+                              (vector-set! cache index found)
+                              ; update the index
+                              (set! index (remainder (add1 index) n))
+                             found)
+                            #f)))))])
+    f))
