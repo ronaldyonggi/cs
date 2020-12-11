@@ -25,8 +25,13 @@
    
    ; Problem 4 : stream-map
    (check-equal? (stream-for-n-steps (stream-map (lambda (x) (+ 2 x)) fibonacci) 5)
-                 (list 2 3 3 4 5 7) "stream-map test") 
-   
+                 (list 2 3 3 4 5 7) "stream-map test")
+
+   ; Problem 5 : 
+   (check-equal? (stream-for-n-steps
+                  (stream-zip fibonacci (stream-map (lambda (x) (+ 2 x)) fibonacci)) 3)
+                  (list (cons 0 2) (cons 1 3) (cons 1 3) (cons 2 4))
+                 "stream-zip test") 
    ))
 
 (require rackunit/text-ui)

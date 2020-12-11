@@ -47,3 +47,17 @@
 ; stream that produces the pairs that result from the other two streams (so the first
 ; value for the result stream will be the pair of the first value of s1 and
 ; the first value of s2).
+(define (stream-zip s1 s2)
+  (letrec ([f (lambda (x1 x2)
+                 (cons
+                  (cons (car (x1)) (car (x2)))
+                  (lambda () (f (cdr (x1)) (cdr (x2))))))])
+    (lambda () (f s1 s2))))
+
+; Problem 7
+; Write a function 'interleave' that takes a list of streams and produces
+; a new stream that takes one element from each stream in sequence. So it will
+; first produce the first value of the first stream, then the first value of
+; the second stream, and so on, and it will go back to the first stream when
+; it reaches the end of the list. Try to do this without ever adding an element
+; to the end of a list.
