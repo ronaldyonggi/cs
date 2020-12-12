@@ -87,3 +87,14 @@
                              found)
                             #f)))))])
     f))
+
+; Problem 11 - Challenge
+(define-syntax while-less
+  (syntax-rules (do)
+    [(while-less e1 do e2)
+     (let ([x e1]) ;evaluate e1 once
+       (letrec ([loop (lambda ()
+                        (let ([y e2]) ; repeat evaluation of e2 for every loop
+                          (if (>= y x) #t (loop))))])
+         (loop)))]))
+
