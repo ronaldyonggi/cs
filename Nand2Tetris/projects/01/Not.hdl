@@ -14,5 +14,8 @@ CHIP Not {
 
     PARTS:
     // Put your code here:
+    // Nand = not(a) and not(b)
+    // if in = 1, then Nand(in) = not(1) and not(1)
+    // = 0 and 0 = 0. Likewise for in = 0.
     Nand(a=in, b=in, out=out);
 }
