@@ -15,4 +15,12 @@ CHIP Or {
 
     PARTS:
     // Put your code here:
+    // Nand(0,0) = Nand(1,0) = Nand(0,1) = 1
+    // Nand(1,1) = 0
+    // Simply Not the initial input a and b, then Nand them.
+    // For example, if initially (a,b) = (0,0)
+    // Then (Not a, Not b) = (1,1) -> Nand(1,1) = 0
+    Not (in=a, out=Nota);
+    Not (in=b, out=Notb);
+    Nand(a=Nota, b=Notb, out=out);
 }
