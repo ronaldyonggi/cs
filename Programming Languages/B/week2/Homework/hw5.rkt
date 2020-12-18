@@ -47,6 +47,7 @@
 (define (eval-under-env e env)
   (cond [(var? e) 
          (envlookup env (var-string e))]
+        [(int? e) e]
         [(add? e) 
          (let ([v1 (eval-under-env (add-e1 e) env)]
                [v2 (eval-under-env (add-e2 e) env)])
@@ -56,6 +57,53 @@
                        (int-num v2)))
                (error "MUPL addition applied to non-number")))]
         ;; CHANGE add more cases here
+        [(aunit? e) e]
+        [(closure? e) e]
+        [(fun? e) (closure (env e))]
+        [(ifgreater? e)
+         (let ([v1 (eval-under-env (ifgreater-e1 e) env)]
+               [v2 (eval-under-env (ifgreater-e2 e) env)])
+           (if (and (int? v1) (int? v2))
+               (if (> (int-num v1) (int-num v2))
+                   (eval-under-env (ifgreater-e3 e) env)
+                   (eval-under-env (ifgreater-e4 e) env))
+               (error "ifgreater applied to non-number")))]
+        [(mlet? e)
+         (if (string? (mlet-var e)) ; check first if mlet-var is a string
+             (let ([new-binding (cons (mlet-var e) (eval-under-env (mlet-e e) env))])
+               (eval-under-env (mlet-body e) (cons new-binding env)))
+             (error "mlet applied to non-string variable"))]
+        [(call? e)
+         ; evaluate 1st and 2nd subexpression
+         (let ([v1 (eval-under-env (call-funexp e) env)] ; v1 = the closure
+               [v2 (eval-under-env (call-actual e) env)])
+           (if (not (closure? v1)) (error "call applied to non-closure")
+               (letrec ([clos-fun-body (fun-body (closure-fun v1))] ; closure's function body
+                     [clos-fun-name (fun-nameopt (closure-fun v1))] ; closure's function name
+                     [clos-fun-arg (fun-formal (closure-fun v1))] ; closure's function arg
+                     [bind2 (cons clos-fun-arg v2)]) ; a pair mapping function arg to v2
+                 (if clos-fun-name ; if closure's function name is not #f
+                     (letrec ([bind1 (cons clos-fun-name v1)]) ; create a binding of pair mapping function name to v1
+                       ; then evaluate closure's fun body with extended environment of both bind1 and bind2
+                       (eval-under-env clos-fun-body (cons bind1 (cons bind2 (closure-env v1)))))
+                     ; otherwise evaluate closure's fun body with extended environment of only bind2
+                     (eval-under-env clos-fun-body (cons bind2 (closure-env v1)))))))]
+
+        [(apair? e)
+         (cons
+          (eval-under-env (apair-e1 e) env)
+          (eval-under-env (apair-e2 e) env))]
+        [(fst? e)
+         (if (apair? (fst-e e))
+             (eval-under-env (apair-e1 (fst-e e)) env)
+             (error "fst applied to non-pair"))]
+        [(snd? e)
+         (if (apair? (snd-e e))
+             (eval-under-env (apair-e2 (snd-e e)) env)
+             (error "snd applied to non-pair"))]
+        [(isaunit? e)
+         (let ([subex (eval-under-env (isaunit-e e) env)])
+           (if (aunit? subex) (int 1) (int 0)))]
         [#t (error (format "bad MUPL expression: ~v" e))]))
 
 ;; Do NOT change
@@ -64,11 +112,13 @@
         
 ;; Problem 3
 
-(define (ifaunit e1 e2 e3) "CHANGE")
+(define (ifaunit e1 e2 e3)
+  (if (aunit? e1) e2 e3))
 
 (define (mlet* lstlst e2) "CHANGE")
 
-(define (ifeq e1 e2 e3 e4) "CHANGE")
+(define (ifeq e1 e2 e3 e4)
+  (if (equal? e1 e2) e3 e4))
 
 ;; Problem 4
 
