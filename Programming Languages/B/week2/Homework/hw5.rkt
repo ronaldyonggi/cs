@@ -115,18 +115,27 @@
 (define (ifaunit e1 e2 e3)
   (if (aunit? e1) e2 e3))
 
-(define (mlet* lstlst e2) "CHANGE")
+(define (mlet* lstlst e2)
+  (if (null? lstlst) e2
+      (mlet (car (car lstlst))
+            (cdr (car lstlst))
+            (mlet* (cdr lstlst) e2))))
+        
 
 (define (ifeq e1 e2 e3 e4)
   (if (equal? e1 e2) e3 e4))
 
 ;; Problem 4
 
-(define mupl-map "CHANGE")
-
-(define mupl-mapAddN 
-  (mlet "map" mupl-map
-        "CHANGE (notice map is now in MUPL scope)"))
+;(define mupl-map
+;  (fun #f "lambda"
+;       (fun "map" "muplst"
+;            (ifaunit (var 
+;      
+;
+;(define mupl-mapAddN 
+;  (mlet "map" mupl-map
+;        "CHANGE (notice map is now in MUPL scope)"))
 
 ;; Challenge Problem
 
