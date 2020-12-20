@@ -14,6 +14,9 @@ CHIP Or8Way {
 
     PARTS:
     // Put your code here:
+
+    // Basically OR with 8 inputs. Simply OR each 2 inputs, then
+    // OR the outputs from those, then again until only 1 output remaining.
     Or(a=in[0], b=in[1], out=or01);
     Or(a=in[2], b=in[3], out=or23);
     Or(a=or01, b=or23, out=firsthalf);
