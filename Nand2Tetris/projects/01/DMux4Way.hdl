@@ -17,4 +17,12 @@ CHIP DMux4Way {
 
     PARTS:
     // Put your code here:
+    // Use the leftmost digit of sel (sel[1]) first to decide
+    // between ab or cd. If sel[1] = 0, then ab.
+    DMux(in=in, sel=sel[1], a=ab, b=cd);
+
+    // Then use the rightmost digit fo sel (sel[0]) to decide
+    // a vs b , or c vs d.
+    DMux(in=ab, sel=sel[0], a=a, b=b);
+    DMux(in=cd, sel=sel[0], a=c, b=d);
 }
