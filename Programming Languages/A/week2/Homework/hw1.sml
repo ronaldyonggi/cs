@@ -94,7 +94,7 @@ fun what_month (day:int) =
 (* Takes in 2 input of days in a year and return a list containing the integer month between the 2 days *)
 (* Output: int list *)
 fun month_range(day1: int, day2: int) =
-    if day1 >= day2
+    if day1 > day2
     then []
     else if day1 = day2
     then (what_month day2)::[]
