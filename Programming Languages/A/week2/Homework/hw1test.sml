@@ -53,12 +53,22 @@ val P9T1 = what_month(31) = 1
 val P9T2 = what_month(32) = 2
 val P9T3 = what_month(364) = 12
 
-(* Problem 10 *)
-val P10T1 = month_range(30, 364) = [1,2,3,4,5,6,7,8,9,10,11,12] (* January through December *)
-val P10T2 = month_range(23, 43) = [1, 2] (* January and February *)
-val P10T3 = month_range(63, 65) = [3] (* Only March *)
-
 (* Problem 11 *)
 val P11T1 = oldest([d1, d2, d3, d4, d5]) = SOME d2
 val P11T2 = oldest([d1, d3, d4]) = SOME d3 
-val P11T3 = oldest([]) = NONE
+val P11T3 = oldest([]) = NONE ;
+
+(* Helper functions tests *)
+
+val remove_int_t1 = remove_int([1,2,3,4,5], 3) = [1,2,4,5];
+val remove_duplicates_t1 = remove_duplicates ([1, 1, 1, 2, 2, 3, 4, 4, 5]) = [1,2,3,4,5] ;
+
+(* Problem 13 *)
+val P13T1 = reasonable_date (~12, 10, 3) = false;
+val P13T2 = reasonable_date (1910, 10, 3) = true;
+val P13T3 = reasonable_date (1996, 2, 29) = true; (* Test leap year *)
+val P13T4 = reasonable_date (1997, 2, 29) = false; (* Test non-leap year Feb 29 *)
+val P13T5 = reasonable_date (2013, 0, 10) = false; 
+val P13T6 = reasonable_date (2013, 13, 10) = false; 
+
+			     
