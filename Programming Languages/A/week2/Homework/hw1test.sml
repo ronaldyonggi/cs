@@ -51,7 +51,14 @@ val P8T7 = number_before_reaching_sum(60, daysInMonths) = 2 (* March *)
 (* Problem 9 *)
 val P9T1 = what_month(31) = 1
 val P9T2 = what_month(32) = 2
-val P9T3 = what_month(364) = 12
+val P9T3 = what_month(364) = 12 ;
+
+(* Problem 10 *)
+val P10T1 = month_range(31, 32) = [1,2] ;
+val P10T2 = month_range(3, 3) = [1];
+val P10T3 = month_range(335,365) = [12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12];
+
+
 
 (* Problem 11 *)
 val P11T1 = oldest([d1, d2, d3, d4, d5]) = SOME d2
