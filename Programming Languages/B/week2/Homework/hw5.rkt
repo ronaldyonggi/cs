@@ -59,7 +59,7 @@
         ;; CHANGE add more cases here
         [(aunit? e) e]
         [(closure? e) e]
-        [(fun? e) (closure (env e))]
+        [(fun? e) (closure env e)]
         [(ifgreater? e)
          (let ([v1 (eval-under-env (ifgreater-e1 e) env)]
                [v2 (eval-under-env (ifgreater-e2 e) env)])
@@ -90,17 +90,17 @@
                      (eval-under-env clos-fun-body (cons bind2 (closure-env v1)))))))]
 
         [(apair? e)
-         (cons
-          (eval-under-env (apair-e1 e) env)
-          (eval-under-env (apair-e2 e) env))]
+          (apair (eval-under-env (apair-e1 e) env)
+                 (eval-under-env (apair-e2 e) env))]
+        ; for fst and snd, evaluate e first and see if it's a pair.
         [(fst? e)
-         (if (apair? (fst-e e))
-             (eval-under-env (apair-e1 (fst-e e)) env)
-             (error "fst applied to non-pair"))]
+         (let ([p (eval-under-env (fst-e e) env)])
+           (if (apair? p) (apair-e1 p)
+             (error "fst applied to non-apair")))]
         [(snd? e)
-         (if (apair? (snd-e e))
-             (eval-under-env (apair-e2 (snd-e e)) env)
-             (error "snd applied to non-pair"))]
+         (let ([p (eval-under-env (snd-e e) env)])
+           (if (apair? p) (apair-e2 p)
+             (error "snd applied to non-apair")))]
         [(isaunit? e)
          (let ([subex (eval-under-env (isaunit-e e) env)])
            (if (aunit? subex) (int 1) (int 0)))]
@@ -113,29 +113,53 @@
 ;; Problem 3
 
 (define (ifaunit e1 e2 e3)
-  (if (aunit? e1) e2 e3))
+  ; Recall if e1 is aunit, (isaunit e1) will return (int 0).
+  ; Otherwise (isaunit e1) will return (int 1).
+  (ifgreater (isaunit e1) (int 0) e2 e3))
 
 (define (mlet* lstlst e2)
   (if (null? lstlst) e2
-      (mlet (car (car lstlst))
-            (cdr (car lstlst))
-            (mlet* (cdr lstlst) e2))))
-        
+      ; car lstlst = the first element of lstlst, which is a pair.
+      (mlet (car (car lstlst)) ; take the first element of the pair as the var of mlet
+            (cdr (car lstlst)) ; take the 2nd element of the pair as the e of mlet
+            (mlet* (cdr lstlst) e2)))) ; body of mlet
 
+; Be careful for misleading problem statement. e3 is evaluated
+; ONLY IF e1 = e2.
 (define (ifeq e1 e2 e3 e4)
-  (if (equal? e1 e2) e3 e4))
+  ; To make sure e1 and e2 are evaluated exactly once, they need to be 
+  ; first bound to variables using mlet! 
+  ; Since the problem statement explicitly mentioned _x and _y, use them!
+  (mlet "_x" e1 
+        (mlet "_y" e2
+              ; Tricky: this is similar to incorporating:
+              ; if e1 > e2 then e4
+              ; else if e2 > e1 then e4
+              ; else e3
+              (ifgreater (var "_x") (var "_y") e4
+                         (ifgreater (var "_y") (var "_x") e4 e3)))))
+              
 
 ;; Problem 4
 
-;(define mupl-map
-;  (fun #f "lambda"
-;       (fun "map" "muplst"
-;            (ifaunit (var 
-;      
-;
-;(define mupl-mapAddN 
-;  (mlet "map" mupl-map
-;        "CHANGE (notice map is now in MUPL scope)"))
+
+(define mupl-map
+  (fun #f "f" ; curry function
+       (fun "map" "mupl-list" ; function that takes a MUPL list
+            (ifaunit (var "mupl-list") (aunit) ; similar to (if (null? lst) null
+                     ; Otherwise, similar to (cons (f (car lst)) (map (cdr lst)))
+                     (apair (call (var "f") (fst (var "mupl-list")))
+                            (call (var "map") (snd (var "mupl-list"))))))))
+
+
+(define mupl-mapAddN 
+ (mlet "map" mupl-map
+       (fun #f "i" ; initiate a function that takes an integer
+            (call (var "map")  
+                  (fun #f "x" (add (var "x") (var "i")))))))
+; provide the map function with a lambda function with argument "x"
+; that adds x with i.
+
 
 ;; Challenge Problem
 
