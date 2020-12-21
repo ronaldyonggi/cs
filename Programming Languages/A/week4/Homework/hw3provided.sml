@@ -186,6 +186,7 @@ val check_pat =
 (* This is basically a code implementation of the rules of matching 
 in problem pdf. *)
 
+(* (valu * pattern) -> (string * valu) list option *)
 fun match (v, p) =
     case (v, p) of
 	(_, Wildcard) => SOME []
@@ -199,8 +200,13 @@ fun match (v, p) =
      | _ => NONE;
 
 
+
+
 (* Problem 12 *)
-fun first_match v pl =
-    SOME (first_answer (fn p => match (v, p)) pl)
+(* Notice that first_answer is curried, so the argument 
+of first_match needs to be curried as well *)
+fun first_match v lstpattern =
+    (* Notice first_answer takes a function. Use the match
+defined in previous problem as the function *)
+    SOME (first_answer (fn p => match (v, p)) lstpattern)
     handle NoAnswer => NONE;
-	
