@@ -14,4 +14,17 @@ CHIP HalfAdder {
 
     PARTS:
     // Put you code here:
+
+    // The half-adder truth table looks like the following:
+    // a | b | sum | carry
+    // -------------------
+    // 0 | 0 |  0  |  0
+    // 0 | 1 |  1  |  0
+    // 1 | 0 |  1  |  0
+    // 1 | 1 |  0  |  1
+
+    // We can see that the 'sum' can be easily produced with Xor while
+    // 'carry' can be done with AND.
+    Xor(a=a, b=b, out=sum);
+    And(a=a, b=b, out=carry);
 }
