@@ -14,4 +14,7 @@ CHIP Inc16 {
 
     PARTS:
    // Put you code here:
+   // Only add 1 once, in the beginning. 
+   // Can represent 0 = false and 1 = true
+   Add16(a=in, b[0]=true, out=out);
 }
