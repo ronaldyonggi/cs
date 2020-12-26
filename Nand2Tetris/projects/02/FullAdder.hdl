@@ -14,4 +14,61 @@ CHIP FullAdder {
 
     PARTS:
     // Put you code here:
+
+    // The truth table for Full Adder is as the following:
+    //    input  |  output
+    // a | b | c | sum | carry
+    // ------------------------
+    // 0 | 0 | 0 |  0  |   0
+    // 0 | 0 | 1 |  1  |   0
+    // 0 | 1 | 0 |  1  |   0
+    // 0 | 1 | 1 |  0  |   1
+    // 1 | 0 | 0 |  1  |   0
+    // 1 | 0 | 1 |  0  |   1
+    // 1 | 1 | 0 |  0  |   1 
+    // 1 | 1 | 1 |  1  |   1
+
+    // Let's rearrange the truth table to separate
+    // between c=0 and c=1.
+
+    //    input  |  output
+    // a | b | c | sum | carry
+    // ------------------------
+    // 0 | 0 | 0 |  0  |   0
+    // 0 | 1 | 0 |  1  |   0
+    // 1 | 0 | 0 |  1  |   0
+    // 1 | 1 | 0 |  0  |   1 
+    // 0 | 0 | 1 |  1  |   0
+    // 0 | 1 | 1 |  0  |   1
+    // 1 | 0 | 1 |  0  |   1
+    // 1 | 1 | 1 |  1  |   1
+
+    // Notice the first half of the table, the output looks like
+    // a half-adder between a & b.
+    // For the second half:
+    // 1. The `sum` looks like a flipped 'xor'
+    // 2. The `carry` looks like an `or`
+
+    HalfAdder(a=a, b=b, sum=tempSum, carry=tempCarry);
+    // One trick is to treat the sum and carry of the first half of the
+    // table as a temporary result (temporary sum and temporary carry) of half-adding
+    // a and b. Then we somehow need to incorporate c with tempSum and tempCarry to get the
+    // final output.
+
+    // tempSum | tempCarry | c | Final sum | Final carry
+    // -------------------------------------------------
+    //    0    |     0     | 1 |    1      |     0
+    //    1    |     0     | 1 |    0      |     1
+    //    1    |     0     | 1 |    0      |     1
+    //    0    |     1     | 1 |    1      |     1
+
+    // Recall in the lecture video, the Full-adder can be built using 2 half-adder. This is
+    // true since half-adder consists of an Xor and AND. Looking at the table above,
+    // we can see that: 'Final sum' = tempSum Xor c. This implies we can half-adder tempSum and c.
+    HalfAdder(a=tempSum, b=c, sum=sum, carry=tempCarry2);
+    // However the alternative output, tempSum AND c, is the same as tempSum (let's call this tempCarry2).
+    // Looking at the table again, notice that 'Final carry' is just tempSum OR tempCarry! Thus we can
+    // OR tempCarry2 with tempCarry to output 'Final carry'.
+    Or(a=tempCarry2, b=tempCarry, out=carry);
+
 }
