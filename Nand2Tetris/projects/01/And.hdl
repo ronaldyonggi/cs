@@ -15,9 +15,17 @@ CHIP And {
 
     PARTS:
     // Put your code here:
-    // Nand(0,0) = Nand(1,0) = Nand(0,1) = 1
-    // Nand(1,1) = 0
-    // Simply Not Nand(a,b)
+    // The hint is easily noticeable if we compare the output of
+    // truth table of And and Nand.
+    // a | b | And | Nand
+    // ------------------
+    // 0 | 0 |  0  |  1
+    // 1 | 0 |  0  |  1
+    // 0 | 1 |  0  |  1
+    // 1 | 1 |  1  |  0
+
+    // As we see above, And is basically the opposite of Nand. Simply
+    // use Nand, then Not the output.
     Nand(a=a, b=b, out=outNand);
     Not (in=outNand, out=out);
 }
