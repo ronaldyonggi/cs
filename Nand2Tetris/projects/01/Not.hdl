@@ -14,9 +14,17 @@ CHIP Not {
 
     PARTS:
     // Put your code here:
-    // Nand(0,0) = 1
-    // Nand(0,1) = Nand(1,0) = 1
-    // Nand(1,1) = 0
-    // Simply put Nand(in, in)
+    // The Not gate is supposedly the first gate we need to solve, with only NAND in hand.
+    // The truth table for Nand is as the following:
+    // a | b | out
+    // -----------
+    // 0 | 0 | 1
+    // 0 | 1 | 1
+    // 1 | 0 | 1
+    // 1 | 1 | 0
+
+    // Only paying attention to the part where a and b are both 0 | 0 and 1 | 1,
+    // we can easily implement Not with NAND, with the same 'in' for both a & b.
+
     Nand(a=in, b=in, out=out);
 }
