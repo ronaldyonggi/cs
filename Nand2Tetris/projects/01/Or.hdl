@@ -24,8 +24,8 @@ CHIP Or {
     // 0 | 1 |  1  |  1
     // 1 | 1 |  1  |  0
 
-    // Notice that the first entry of Or output 0 can be achieved by Nand (1, 1), while
-    // the last entry of Or output 1 can be achieved by Nand (0, 0).
+    // Notice that the first entry of Or output 0 can be achieved by output of Nand (1, 1), while
+    // the last entry of Or output 1 can be achieved by output of Nand (0, 0).
     // Meanwhile, swapping a, b doesn't change the output (regardless 1,0 or 0,1, the output is still 1).
 
     // Then we can NOT the initial input of a and b to be Not a and Not b, then input them to Nand.
