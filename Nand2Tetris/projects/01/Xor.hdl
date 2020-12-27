@@ -11,6 +11,20 @@
 CHIP Xor {
     IN a, b;
     OUT out;
+    // a | b | Xor | Nand | Or | And
+    // ------------------------------
+    // 0 | 0 |  0  |  1   | 0  |  0
+    // 1 | 0 |  1  |  1   | 1  |  0
+    // 0 | 1 |  1  |  1   | 1  |  0
+    // 1 | 1 |  0  |  0   | 1  |  1
+
+    // Notice carefully, the output Xor can be achived by Nand(a,b) AND Or(a,b).
+    // a | b | Nand | Or | Xor
+    // ------------------------
+    // 0 | 0 |  1   | 0  |  0
+    // 1 | 0 |  1   | 1  |  1
+    // 0 | 1 |  1   | 1  |  1
+    // 1 | 1 |  0   | 1  |  1
 
     PARTS:
     // Put your code here:
