@@ -15,4 +15,14 @@ CHIP Bit {
 
     PARTS:
     // Put your code here:
+    // As shown in the lecture video, 1-bit register can be built using a 
+    // MUX and DFF.
+
+    // BEWARE! Whether a=in or b=in does matter!
+    // Recall as a selector, if sel = 0, a is chosen. if sel=1, b is chosen.
+    // Keeping in mind the sel above, the b should be in!
+
+    Mux(a=dffout, b=in, sel=load, out=muxout); // However, what is dffout?
+    // One helpful info to know is that we can set out to 2 different variables.
+    DFF(in=muxout, out=out, out=dffout);
 }
