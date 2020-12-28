@@ -16,4 +16,21 @@ CHIP RAM64 {
 
     PARTS:
     // Put your code here:
+    // Similar implementation with RAM8, but instead of using registers, we use lines of RAM8.
+    // Use the last 3 digits of address to choose which RAM group we're using.
+    DMux8Way(in=load, sel=address[3..5], a=a, b=b, c=c, d=d, e=e, f=f, g=g, h=h);
+
+    // Then use the first 3 digits of address to choose which register within the RAM group.
+    RAM8(in=in, load=a, address=address[0..2], out=aout);
+    RAM8(in=in, load=b, address=address[0..2], out=bout);
+    RAM8(in=in, load=c, address=address[0..2], out=cout);
+    RAM8(in=in, load=d, address=address[0..2], out=dout);
+    RAM8(in=in, load=e, address=address[0..2], out=eout);
+    RAM8(in=in, load=f, address=address[0..2], out=fout);
+    RAM8(in=in, load=g, address=address[0..2], out=gout);
+    RAM8(in=in, load=h, address=address[0..2], out=hout);
+
+    // Then merge back the output, using the same address we used to spread out the input.
+    Mux8Way16(a=aout, b=bout, c=cout, d=dout, e=eout, f=fout, g=gout, h=hout, sel=address[3..5], out=out);
+
 }
