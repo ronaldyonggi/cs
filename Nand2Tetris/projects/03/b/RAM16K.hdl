@@ -16,4 +16,15 @@ CHIP RAM16K {
 
     PARTS:
     // Put your code here:
+    // CAUTION! 16K is 4 times 4K! This means we need 4 of the RAM4K rather than 8. Use
+    // DMux4Way, and use only the last 2 digits of address (not 3 digits)!
+    DMux4Way(in=load, sel=address[12..13], a=a, b=b, c=c, d=d);
+
+    RAM4K(in=in, load=a, address=address[0..11], out=aout);
+    RAM4K(in=in, load=b, address=address[0..11], out=bout);
+    RAM4K(in=in, load=c, address=address[0..11], out=cout);
+    RAM4K(in=in, load=d, address=address[0..11], out=dout);
+
+    // Then merge back using Mux4way16!!
+    Mux4Way16(a=aout, b=bout, c=cout, d=dout, sel=address[12..13], out=out);
 }
