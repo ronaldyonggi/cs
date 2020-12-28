@@ -16,4 +16,23 @@ CHIP RAM8 {
 
     PARTS:
     // Put your code here:
+    // Hint: Recall we have Multibuses mux/dmux (e.g. DMux8way, Mux8Way16, etc.)
+
+    // Here we use DMux8Way because the RAM has 8 registers. The purpose of the DMux8Way is to route the load 
+    // to one specific register among the 8.
+    DMux8Way(in=load, sel=address, a=a, b=b, c=c, d=d, e=e, f=f, g=g, h=h);
+
+    // Then use Register on each RAM. The output of the Dmux8Way become the load in the 8 registers (remember
+    // from video lecture that one at a time, one of these registers contains 1 load, while the others are not.)
+    Register(in=in, load=a, out=aout);
+    Register(in=in, load=b, out=bout);
+    Register(in=in, load=c, out=cout);
+    Register(in=in, load=d, out=dout);
+    Register(in=in, load=e, out=eout);
+    Register(in=in, load=f, out=fout);
+    Register(in=in, load=g, out=gout);
+    Register(in=in, load=h, out=hout);
+
+    // Then merge the multiple outputs back. 
+    Mux8Way16(a=aout, b=bout, c=cout, d=dout, e=eout, f=fout, g=gout, h=hout, sel=address, out=out);
 }
