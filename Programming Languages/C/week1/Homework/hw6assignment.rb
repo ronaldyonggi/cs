@@ -8,7 +8,7 @@ class MyPiece < Piece
   Extra = [rotations([[0, 0], [1, 0], [0, 1]]), # Mini 3-pieces L
                [[[0, 0], [-1, 0], [-2, 0], [1, 0], [2, 0]], # Long 5 piece, horizontal
                [[0, 0], [0, -1], [0, -2], [0, 1], [0, 2]]], # Long 5 piece, vertical
-               rotations([[0, 0], [-1, 0], [-1, -1], [0, -1], [1, -1]])] # Square with 1 extra piece
+               rotations([[0, 0], [-1, 0], [-1, -1], [0, -1], [1, 0]])] # Square with 1 extra piece
   
   Cheat_Piece = [[[0, 0]]]
 
