@@ -17,4 +17,20 @@ CHIP PC {
 
     PARTS:
     // Put your code here:
+    // Hints from lecture code:
+    // can be built from register, incrementor (remember Inc16 from week2), and some logic gates.
+
+    // Note that ORDER MATTERS! If both inc and load are 1, want to make sure
+    // the output is still 'in', not incremented output!
+    // Thus, increment Mux16 should be after the 'load' Mux16!
+    Inc16(in=cycle, out=incremented); // 'cycle' is the cycled final output
+    Mux16(a=cycle, b=incremented, sel=inc, out=incout);
+    // Use the output from increment to the 'load' Mux16
+    Mux16(a=incout, b=in, sel=load, out=loadout);
+    // Then use the ouput from load to 'reset' Mux16
+    Mux16(a=loadout, b=false, sel=reset, out=resetout);
+    // Last but not least, use Register to separate output to final output
+    // and cycle output
+    Register(in=resetout, load=true, out=out, out=cycle);
+
 }
