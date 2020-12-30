@@ -69,6 +69,11 @@ CHIP ALU {
     // This Implementation is easier to understand with sketches. Make sure to watch 
     // Youtube videos on Nand2tetris ALU, they help!
 
+    // For zx and zy, at first might think we can And(x[16], not16(zx)). However, 
+    // we can't do this because Not16 takes in a 16 bit input, while zx and zy are 1 bit.
+    // An alternative is to use Mux16, where the other input can be simply false to represent
+    // all zeroes, while zx (or zy) can be used as the selector.
+
     // Start with zx and zy
     Mux16(a=x, b=false, sel=zx, out=zxout); // zx output
     Mux16(a=y, b=false, sel=zy, out=zyout); // zy output
@@ -87,7 +92,20 @@ CHIP ALU {
     Mux16(a=andxy, b=addxy, sel=f, out=fout);
     // Make a branch that negates the output of f
     Not16(in=fout, out=notfout); // f !out
-    // Finally, use Mux16 with no as selector between f out and !out
-    Mux16(a=fout, b=notfout, sel=no, out=out);
+    // Finally, use Mux16 with no as selector between f out and !out.
+    // The out[15], the first 8 bits of outputs and last 8 bits of outputs are needed for 
+    // ng and zr
+    Mux16(a=fout, b=notfout, sel=no, out=out, out[15]=ng, out[0..7]=firsthalfout, out[8..15]=secondhalfout);
 
+    // For ng (whether the output is negative), simply check the last bit [15] of output
+    // whether it's 1 (for negative) or 0 (positive). 
+
+    // For zr, an Or8Way comes in handy! Recall Or8Way takes 8 bits input
+    // and returns 1 if any of the input bit is 1.
+    Or8Way(in=firsthalfout, out=firsthalfzr);
+    Or8Way(in=secondhalfout, out=secondhalfzr);
+    Or(a=firsthalfzr, b=secondhalfzr, out=negatedzr);
+    // We still need to negate the output of the Or above. 
+    Not(in=negatedzr, out=zr);
+    
 }
