@@ -43,4 +43,51 @@ CHIP ALU {
 
     PARTS:
    // Put you code here:
+//    ALU truth table:
+//    zx | nx | zy | ny | f | no |  out  |
+//    ------------------------------------
+//     1 | 0  | 1  | 0  | 1 |  0 |   0   |
+//     1 | 1  | 1  | 1  | 1 |  1 |   1   |
+//     1 | 1  | 1  | 0  | 1 |  0 |  -1   |
+//     0 | 0  | 1  | 1  | 0 |  0 |   x   |
+//     1 | 1  | 0  | 0  | 0 |  0 |   y   |
+//     0 | 0  | 1  | 1  | 0 |  1 |  !x   |
+//     1 | 1  | 0  | 0  | 0 |  1 |  !y   |
+//     0 | 0  | 1  | 1  | 1 |  1 |  -x   |
+//     1 | 1  | 0  | 0  | 0 |  1 |  -y   |
+//     0 | 1  | 1  | 1  | 1 |  1 | x+1   |
+//     1 | 1  | 0  | 1  | 1 |  1 | y+1   |
+//     0 | 0  | 1  | 1  | 1 |  0 | x-1   |
+//     1 | 1  | 0  | 0  | 1 |  0 | y-1   |
+//     0 | 0  | 0  | 0  | 1 |  0 | x+y   |
+//     0 | 1  | 0  | 0  | 1 |  1 | x-y   |
+//     0 | 0  | 0  | 1  | 1 |  1 | y-x   |
+//     0 | 0  | 0  | 0  | 0 |  0 | x&y   |
+//     0 | 1  | 0  | 1  | 0 |  1 | x|y   |
+
+
+    // This Implementation is easier to understand with sketches. Make sure to watch 
+    // Youtube videos on Nand2tetris ALU, they help!
+
+    // Start with zx and zy
+    Mux16(a=x, b=false, sel=zx, out=zxout); // zx output
+    Mux16(a=y, b=false, sel=zy, out=zyout); // zy output
+    // Make a new branch that negates zx output, then
+    // use Mux16 with an input of zx and !zx, with nx as selector.
+    Not16(in=zxout, out=notzxout); // This is !zx
+    Mux16(a=zxout, b=notzxout, sel=nx, out=nxout);
+    // Same goes for ny
+    Not16(in=zyout, out=notzyout); // This is !zy
+    Mux16(a=zyout, b=notzyout, sel=ny, out=nyout);
+    // Then use And16 for x&y
+    And16(a=nxout, b=nyout, out=andxy);
+    // use add16 for x+y
+    Add16(a=nxout, b=nyout, out=addxy);
+    // Then use Mux16 once again for f to select between x&y or x+y
+    Mux16(a=andxy, b=addxy, sel=f, out=fout);
+    // Make a branch that negates the output of f
+    Not16(in=fout, out=notfout); // f !out
+    // Finally, use Mux16 with no as selector between f out and !out
+    Mux16(a=fout, b=notfout, sel=no, out=out);
+
 }
