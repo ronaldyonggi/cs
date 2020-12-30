@@ -45,11 +45,11 @@ CHIP FullAdder {
 
     // Notice the first half of the table, the output looks like
     // a half-adder between a & b.
+    HalfAdder(a=a, b=b, sum=tempSum, carry=tempCarry);
     // For the second half:
     // 1. The `sum` looks like a flipped 'xor'
     // 2. The `carry` looks like an `or`
 
-    HalfAdder(a=a, b=b, sum=tempSum, carry=tempCarry);
     // One trick is to treat the sum and carry of the first half of the
     // table as a temporary result (temporary sum and temporary carry) of half-adding
     // a and b. Then we somehow need to incorporate c with tempSum and tempCarry to get the
