@@ -205,18 +205,10 @@ fun eval_prog (e,env) =
 					| LineSegment (x1, y1, x2, y2) => LineSegment (x1 + deltaX, y1 + deltaY, x2 + deltaX, y2 + deltaY) 
 					| _ => raise Impossible "Bad expression for shift"
 
-(* Helper function for floating numbers equality *)
-fun float_equal (a, b) = 
-    (abs (a - b)) <= 0.00001 ;
-
-(* Helper function to check whether two points are equal *)
-fun points_equal (x1, y1, x2, y2) = 
-    float_equal(x1, x2) andalso float_equal(y1, y2);
-
 (* CHANGE: Add function preprocess_prog of type geom_exp -> geom_exp *)
 fun preprocess_prog e = 
 	case e of
-	LineSegment (x1, y1, x2, y2) => if points_equal(x1, y1, x2, y2)
+	LineSegment (x1, y1, x2, y2) => if real_close_point (x1,y1) (x2,y2)
 					then Point (x1, y1)
 					else if x1 > x2 orelse y1 > y2
 					then LineSegment (x2, y2, x1, y1)
