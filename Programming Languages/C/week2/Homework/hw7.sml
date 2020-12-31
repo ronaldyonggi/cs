@@ -20,6 +20,7 @@ datatype geom_exp =
 	 | Let of string * geom_exp * geom_exp (* let s = e1 in e2 *)
 	 | Var of string
 (* CHANGE add shifts for expressions of the form Shift(deltaX, deltaY, exp *)
+	 | Shift of deltaX * deltaY * geom_exp
 
 exception BadProgram of string
 exception Impossible of string
