@@ -69,21 +69,17 @@ class GeometryValue
     line_result.intersectWithSegmentAsLineResult seg
   end
 
-end
-
-class NoPoints < GeometryValue
-  # do *not* change this class definition: everything is done for you
-  # (although this is the easiest class, it shows what methods every subclass
-  # of geometry values needs)
-  # However, you *may* move methods from here to a superclass if you wish to
-
-  # Note: no initialize method only because there is nothing it needs to do
+  # Methods moved from NoPoints. Note the description of functions all belong 
+  # to NoPoints'. Do this so that GeometryValues subclasses own eval_prog and
+  # preprocess_prog methods.
   def eval_prog env 
     self # all values evaluate to self
   end
+
   def preprocess_prog
     self # no pre-processing to do here
   end
+
   def shift(dx,dy)
     self # shifting no-points is no-points
   end
@@ -93,21 +89,38 @@ class NoPoints < GeometryValue
   def intersect other
     other.intersectNoPoints self # will be NoPoints but follow double-dispatch
   end
+
   def intersectPoint p
     self # intersection with point and no-points is no-points
   end
+
   def intersectLine line
     self # intersection with line and no-points is no-points
   end
+
   def intersectVerticalLine vline
     self # intersection with line and no-points is no-points
   end
+
   # if self is the intersection of (1) some shape s and (2) 
   # the line containing seg, then we return the intersection of the 
   # shape s and the seg.  seg is an instance of LineSegment
   def intersectWithSegmentAsLineResult seg
     self
   end
+
+end
+
+class NoPoints < GeometryValue
+  # do *not* change this class definition: everything is done for you
+  # (although this is the easiest class, it shows what methods every subclass
+  # of geometry values needs)
+  # However, you *may* move methods from here to a superclass if you wish to
+
+  # Note: no initialize method only because there is nothing it needs to do
+
+  # All methods are inherited from superclass
+
 end
 
 
@@ -125,7 +138,7 @@ class Point < GeometryValue
 
   # The shift method creates a new object, not mutating self.
   def shift(dx, dy)
-    Point.new(x+dx, y+dy)
+    Point.new(x + dx, y + dy)
   end
 
   # Double dispatch: tell the other object to call its intersectPoint method with self (a point)
@@ -143,7 +156,10 @@ class Point < GeometryValue
     if real_close_point(@x, @y, p.x, p.y)
       self # In this case simply return self.
     # Otherwise the points don't intersect. Return NoPoint
-    else NoPoints.new 
+    else 
+      NoPoints.new 
+    end
+
   end
 
     # Can check whether a point intersects a line by inputting point's x into
@@ -152,22 +168,27 @@ class Point < GeometryValue
   def intersectLine line
     if real_close(@y, line.m * @x + line.b)
       self
-    else NoPoints.new
+    else 
+      NoPoints.new
+    end
   end
 
   # Checking if a point intersects a vertical line is easier: just compare the x coordinates!
   def intersectVerticalLine vline
     if real_close(@x, vline.x)
       self
-    else NoPoints.new
+    else 
+      NoPoints.new
+    end
   end
 
   # Refer to sml code on how to handle LineSegment paired with a Point.
   def intersectWithSegmentAsLineResult seg
-    if inbetween(@x, p.x1, p.x2) && inbetween(@y, p.y1, p.y2)
-      p
+    if inbetween(@x, seg.x1, seg.x2) && inbetween(@y, seg.y1, seg.y2)
+      self
     else
       NoPoints.new
+    end
   end
 
   # Helper inbetween method, used for intersectWithSegmentAsLineResult method.
@@ -192,7 +213,7 @@ class Line < GeometryValue
 
   # Line's shift method creates a new object, not mutating self.
   def shift(dx, dy)
-    Line.new(@m, @b+dy - (@m * dx))
+    Line.new(@m, @b + dy - (@m * dx))
   end
 
   # Double dispatch: call other's intersectLine method.
@@ -211,22 +232,24 @@ class Line < GeometryValue
   def intersectLine line
     if real_close(@m, line.m)
       # If both the slope and intercept are the same, then these are the same line!
-      if real_close (@b, line.b)
+      if real_close(@b, line.b)
         self
       # Otherwise if only the slopes are the same, then they are parallel lines (no intersection).
-      else NoPoints.new
+      else 
+        NoPoints.new
       end
     # Otherwise the 2 lines will intersect at a point.
     else
       x = (line.b - @b) / (@m - line.m)
       y = @m * x + @b
       Point.new(x, y)
+    end
   end
 
   # A line and a vertical line intersects at a point. The y-coordinate of the point can be computed
   # by inputting the vertical line's x into the equation of the line.
   def intersectVerticalLine vline
-    Point(vline.x, @m * vline.x + @b)
+    Point.new(vline.x, @m * vline.x + @b)
   end
 
   # Problem statement says that assumes `self` is the intersection of a geometry-value and 
@@ -271,8 +294,10 @@ class VerticalLine < GeometryValue
 
   def intersectVerticalLine vline
     if real_close(@x, vline.x)
-      then self
-    else NoPoints.new
+      self
+    else 
+      NoPoints.new
+    end
   end
 
   # Problem statement says that assumes `self` is the intersection of a geometry-value and 
@@ -299,27 +324,71 @@ class LineSegment < GeometryValue
   end
 
   def shift(dx, dy)
-    LineSegment.new(x1+dx, y1+dy, x2+dx, y2+dy)
+    LineSegment.new(@x1 + dx, @y1 + dy, @x2 + dx, @y2 + dy)
   end
 
-  # Double dispatch: simply call other's intersectWithSegmentAsLineResult method.
+  # Recall GeometricValue has intersectLineSegment method defined already. Use that for
+  # second dispatch.
   def intersect other
-    other.intersectWithSegmentAsLineResult self
+    other.intersectLineSegment self
   end
 
-  # Commutative: We already defined Point's intersectWithSegmentAsLineResult method.
   def intersectPoint p
-    p.intersectWithSegmentAsLineResult self
+    p.intersectLineSegment self
   end
 
-  # Commutative: Already defined Line's intersectwithSegmentAsLineResult method.
   def intersectLine line
-    line.intersectwithSegmentAsLineResult self
+    line.intersectLineSegment self
   end
 
-  # Commutative: Already defined VerticalLine's intersectwithSegmentAsLineResult method.
-  def intersectLine vline
-    vline.intersectwithSegmentAsLineResult self
+  def intersectVerticalLine vline
+    vline.intersectLineSegment self
+  end
+
+  # The hard part: self and seg are both on the same line.
+  def intersectWithSegmentAsLineResult seg
+    # Follow SML version's variables convention for easier implementation.
+    seg1 = [@x1, @y1, @x2, @y2]
+    seg2 = [seg.x1, seg.y1, seg.x2, seg.y2]
+    # if segments are on a vertical line
+    if real_close(@x1, @x2)
+      aXstart, aYstart, aXend, aYend,
+      bXstart, bYstart, bXend, bYend = @y1 < seg.y1 ? seg1 + seg2 : seg2 + seg1
+      if real_close(aYend, bYstart)
+        Point.new(aXend, aYend) # Just touching
+      elsif aYend < bYstart
+        NoPoints.new # Disjoint
+      elsif aYend > bYend
+        LineSegment.new(bXstart, bYstart, bXend, bYend) # b is inside a
+      else # Otherwise overlapping
+        LineSegment.new(bXstart, bYstart, aXend, aYend)
+      end
+    else # case where the segments are on a non-vertical line
+      aXstart, aYstart, aXend, aYend,
+      bXstart, bYstart, bXend, bYend = @x1 < seg.x1 ? seg1 + seg2 : seg2 + seg1
+      if real_close(aXend, bXstart)
+        Point.new(aXend, aYend)
+      elsif aXend < bXstart
+        NoPoints.new
+      elsif aXend < bXend
+        LineSegment.new(bXstart, bYstart, bXend, bYend)
+      else
+        LineSegment.new(bXstart, bYstart, aXend, aYend)
+      end
+    end
+  end
+
+  # Exclusive preprocess_prog method for line segment
+  def preprocess_prog
+    # If x1=x2 and y1=y2, then replace with Point(x1, y1)
+    if real_close_point(@x1, @y1, @x2, @y2)
+      Point.new(@x1, @y1)
+    # If x1 > x2 or if xs are equal but y1 > y2
+    elsif @x1 > @x2 || (real_close(@x1, @x2) && (@y1 > @y2))
+      LineSegment.new(@x2, @y2, @x1, @y1) # swap 1 with 2
+    else
+      self
+    end
   end
 
 end
@@ -377,6 +446,7 @@ class Var < GeometryExpression
   def initialize s
     @s = s
   end
+
   def eval_prog env # remember: do not change this method
     pr = env.assoc @s
     raise "undefined variable" if pr.nil?
