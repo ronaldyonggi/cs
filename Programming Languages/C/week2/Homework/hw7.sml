@@ -197,21 +197,31 @@ fun eval_prog (e,env) =
       | Let(s,e1,e2) => eval_prog (e2, ((s, eval_prog(e1,env)) :: env))
       | Intersect(e1,e2) => intersect(eval_prog(e1,env), eval_prog(e2, env))
 (* CHANGE: Add a case for Shift expressions *)
-      | Shift (deltaX, deltaY, ex) => case eval_prog(ex, env) of
-					  NoPoints => e
-					| Point (x, y) => Point (x + deltaX, y + deltaY)
-					| Line (m, b) => Line (m, (b + deltaY) - (m * deltaX))
-					| VerticalLine x => VerticalLine (x + deltaX)
-					| LineSegment (x1, y1, x2, y2) => LineSegment (x1 + deltaX, y1 + deltaY, x2 + deltaX, y2 + deltaY) 
-					| _ => raise Impossible "Bad expression for shift"
+      | Shift (dx, dy, ex) =>
+	case eval_prog(ex, env) of
+	    NoPoints => NoPoints
+	  | Point (x, y) => Point (x + dx, y + dy)
+	  | Line (m, b) => Line (m, (b + dy) - (m * dx))
+	  | VerticalLine x => VerticalLine (x + dx)
+	  | LineSegment (x1, y1, x2, y2) => LineSegment (x1 + dx, y1 + dy, x2 + dx, y2 + dy)
+	  | _ => raise Impossible "Bad expression for shift"
 
 (* CHANGE: Add function preprocess_prog of type geom_exp -> geom_exp *)
 fun preprocess_prog e = 
 	case e of
-	LineSegment (x1, y1, x2, y2) => if real_close_point (x1,y1) (x2,y2)
-					then Point (x1, y1)
-					else if x1 > x2 orelse y1 > y2
-					then LineSegment (x2, y2, x1, y1)
-					else LineSegment (x1, y1, x2, y2)
-	 | _ => e ;
+	    LineSegment (x1, y1, x2, y2) =>
+	    if real_close (x1,x2) (* cases of x1 = x2 *)
+	    then if real_close (y1, y2) (* if y1=y2*)
+		 then Point(x1, y1) (* then the line segment is a single point *)
+		 else if y1 > y2 (* if y1 > y2 *)
+		 then LineSegment(x2, y2, x1, y1)
+		 else e
+	    else if x1 > x2 (* cases of x1 > x2 *)
+	    then LineSegment (x2, y2, x1, y1)
+	    else e 
+	(* For cases involving expressions, preprocess_prog those expressions. *)
+	 | Let (s, e1, e2) => Let (s, preprocess_prog e1, preprocess_prog e2) 
+	 | Intersect(e1, e2) => Intersect (preprocess_prog e1, preprocess_prog e2)
+	 | Shift (dx, dy, ex) => Shift (dx, dy, preprocess_prog ex) 
+	 | _ => e
 
