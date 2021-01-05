@@ -38,6 +38,6 @@ Legend:
 
  | Courses      | Status | Repository |
  | ------------------ | -------------------------- | ---- |
- |[CS50](https://cs50.harvard.edu/x/2021/)| :pencil2: | 
+ |[CS50](https://cs50.harvard.edu/x/2021/)| :pencil2: | [Here](https://github.com/ronaldyonggi/self-study/tree/master/CS50)
  |[CS61A - Structure and Interpretation of Computer Programs](https://cs61a.org/) | :heavy_check_mark:| [Here](https://github.com/ronaldyonggi/cs61a)
  |[CS61B - Data Structures](https://sp18.datastructur.es/)|:heavy_check_mark: | [Here](https://github.com/ronaldyonggi/cs61b)
