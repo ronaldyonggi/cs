@@ -15,7 +15,7 @@ Legend:
 
  | Courses      | Status  | Repository |
  | ------------------ | -------------------------- | ---|
- |[Intro to CS and Programming using Python](https://www.edx.org/course/introduction-computer-science-mitx-6-00-1x-10)  |:heavy_check_mark:| [Here](https://github.com/ronaldyonggi/self-study/tree/master/edx/MIT/6.00.1x)
+ |[6.00.1x](https://www.edx.org/course/introduction-computer-science-mitx-6-00-1x-10)  |:heavy_check_mark:| [Here](https://github.com/ronaldyonggi/self-study/tree/master/6.00.1x)
 
 ## Core Programming
   
