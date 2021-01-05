@@ -16,8 +16,6 @@ Legend:
  | Courses      | Status  | Repository |
  | ------------------ | -------------------------- | ---|
  |[Intro to CS and Programming using Python](https://www.edx.org/course/introduction-computer-science-mitx-6-00-1x-10)  |:heavy_check_mark:| [Here](https://github.com/ronaldyonggi/self-study/tree/master/edx/MIT/6.00.1x)
- |[CS61A - Structure and Interpretation of Computer Programs](https://cs61a.org/) | :heavy_check_mark:| [Here](https://github.com/ronaldyonggi/cs61a)
- |[CS61B - Data Structures](https://sp18.datastructur.es/)|:heavy_check_mark: | [Here](https://github.com/ronaldyonggi/cs61b)
 
 ## Core Programming
   
@@ -35,3 +33,11 @@ Legend:
  | ------------------ | -------------------------- | ---- |
  |[Nand2Tetris Part 1](https://www.coursera.org/learn/build-a-computer)| :pencil2: | [Here](https://github.com/ronaldyonggi/self-study/tree/master/Nand2Tetris)
 
+
+## Extra
+
+ | Courses      | Status | Repository |
+ | ------------------ | -------------------------- | ---- |
+ |[CS50](https://cs50.harvard.edu/x/2021/)| :pencil2: | 
+ |[CS61A - Structure and Interpretation of Computer Programs](https://cs61a.org/) | :heavy_check_mark:| [Here](https://github.com/ronaldyonggi/cs61a)
+ |[CS61B - Data Structures](https://sp18.datastructur.es/)|:heavy_check_mark: | [Here](https://github.com/ronaldyonggi/cs61b)
