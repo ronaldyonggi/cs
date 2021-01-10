@@ -1,3 +1,13 @@
+## Week 1 Extra Practice - Guess The Word
+
+# This is an implementation of a word guessing game (similar to "Hangman"). 
+# It has a simpe-text based interface, and doesn't aim to be fully playable -- 
+# it doesn't take much effort to hide the secret word or phrase from the player,
+# for example.
+
+# In a separate solution file, implement changes to this game!
+
+
 ## Provided code for Guess The Word practice problem (section 7)
 
 class GuessTheWordGame
